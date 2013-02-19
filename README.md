@@ -90,7 +90,7 @@ Components:
 
 ### Inspection
 
--  Browser inspecting: using sass you want to add 'Sass::Plugin.options[:debug_info] = true' to 'config/environment.rb'. Using Compass you want to add 'sass_options = {:debug_info => true}' to 'config.rb'
+-  Browser inspecting: using sass you want to add `Sass::Plugin.options[:debug_info] = true` to `config/environment.rb`. Using Compass you want to add `sass_options = {:debug_info => true}` to `config.rb`
     -  Firesass extension for Firebug
         -  [Firesass Github page](https://github.com/nex3/firesass)
     -  Chrome: Don’t use Sass Inspector, it’s harder to set up and appears to have been abandoned for the native ability being developed. Enable dev tool experiments. Seems to be broken in Canary at the moment.
