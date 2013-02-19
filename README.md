@@ -95,4 +95,4 @@ Components:
         -  [Firesass Github page](https://github.com/nex3/firesass)
     -  Chrome: Don’t use Sass Inspector, it’s harder to set up and appears to have been abandoned for the native ability being developed. Enable dev tool experiments. Seems to be broken in Canary at the moment.
         -  [Using Sass source maps in WebKit Inspector](http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector)
-        -  [The Breakpoint with Paul Irish and Addy Osmani—Episode 2](http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector + http://www.youtube.com/watch?v=PPXeWjWp-8Y) (first segment)
+        -  [The Breakpoint with Paul Irish and Addy Osmani—Episode 2](http://www.youtube.com/watch?v=PPXeWjWp-8Y) (first segment)
