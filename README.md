@@ -23,6 +23,7 @@ Sass is a css preproessor that compiles in to CSS.
 -  Mixins, arguments
 -  Extend
 -  Functions
+    -  [Great Color Function Example](http://sassme.arc90.com/)
 
 ### Advanced Catch All
 
