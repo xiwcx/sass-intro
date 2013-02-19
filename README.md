@@ -2,16 +2,26 @@
 
 ## Sass
 
-Sass is a css preproessor that compiles in to CSS. 
+Sass is a css preproessor that compiles in to CSS.
+
+-  css/scss Example
 
 ### Intro
 
--  Why? What do you get?
+-  Why Sass? What do you get?
+    - Organizational and
+    - Logic tools, which equal
+    - More managable, more maintainable, faster developing, and more fun coding!
 -  SASS vs. SCSS: There are two syntaxes. Today we’re using the SCSS syntax
--  Example
--  Compiled output
+    - Scss is a superset of css
+    - So easy to start, just rename your files
+    - Start using the features you're comfortable with, and when you
+-  Compile output
+    - Your sass turns into css
+    - This is what you feed the browser
+    - ? Not sure what other info to push here.
 
--  sassmeister.com
+-  sassmeister.com (if their local setups aren't solid)
 
 ### The Easy Stuff
 
@@ -33,19 +43,34 @@ Sass is a css preproessor that compiles in to CSS.
 
 ### Best Practices
 
--  Two layer abstraction
--  Populate your extends with a mixin (rwd gotcha)
+*The longer this gets the more I think it would go better after Compass*
 
-Pretty exhausting to write and maintain your own library. Sass is extensible. There are a few libraries built on top of it, but we're going to focus on 
+- Two layer abstraction
+- Populate your extends with a mixin (rwd gotcha)
+- Partials for code organization and mental sanity
+    - It's easier to wrap your head around what this code should do and avoid spreading rules around the css file if you wall it in with a partial.
+- Remember: DON'T EDIT THE CSS
+    - All people working on a project need to buy in to sass
+    - Junk file for the bits and pieces, people who don't know scss
+
+Pretty exhausting to write and maintain your own library. Sass is extensible. There are a few libraries built on top of it, but we're going to focus on
 
 ## Compass
 
-There are libraries built on top of SASS. The two most popular are Compass and Bourbon. Compass is the clear winner and that’s what we’ll be talking about today.
+- SASS is extensible with libraries. The two most popular are Compass and Bourbon.
+- Compass is more than just a collection of prebuilt mixins
+- It's the defacto standard. People build on Sass *and* Compass.
+- It's the clear winner and what we’ll be talking about today.
 
 ### What does it offer?
 
 -  prebuilt mixins and functions for CSS3
 -  shortcuts: link colors
+-  Compass Watch
+-  config.rb
+-  Easy way to bundle extensions and extend further
+
+*RWRW Have a date, have to run! Will continue later tonight.*
 
 ### What makes it different?
 
