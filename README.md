@@ -20,7 +20,6 @@ Sass is a css preproessor that compiles in to CSS.
     - Your sass turns into css
     - This is what you feed the browser
     - ? Not sure what other info to push here.
-
 -  sassmeister.com (if their local setups aren't solid)
 
 ### The Easy Stuff
@@ -71,10 +70,9 @@ Pretty exhausting to write and maintain your own library. Sass is extensible. Th
 -  Easy way to bundle extensions and extend further
     -  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
     -  Bundle extensions, gems can be called in to many projects from a single location
-
 -  Not perfect — use wisely.
     -  clearfix example — their default is overflow: hidden. What is this, 1999?
-
+    -  
 ### Further ecosystem
 
 There are tons of compass extensions. Grids, color management, toolkits.
@@ -100,13 +98,10 @@ Now that you have the basics, here's how to roll sass into a practical, modern l
 
 - Why dev locally?
 - What to upload, brief touch on mysql import/ git
-
 - Watching your folders so you don't have to manually compile
-
 - Keep a browser window open.
     - What is livereload? (style injection)
     - No page refresh, maintain states. Save time and waiting. Little waits add up.
-
 - (Aside: tools)
     -  Command Line
         -  Sass
@@ -117,7 +112,6 @@ Now that you have the basics, here's how to roll sass into a practical, modern l
         -  Compass.app: works in mac, linux, and PC
         -  Scout: for Windows
         -  Codekit (livereload doesn't work in Firefox, only webkit)
-
 - Inspecting your css, revising your sass
     - Turn on Sass line number comments
     - Using sass inspector
