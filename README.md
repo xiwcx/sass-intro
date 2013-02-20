@@ -62,59 +62,70 @@ Pretty exhausting to write and maintain your own library. Sass is extensible. Th
 - It's the defacto standard. People build on Sass *and* Compass.
 - It's the clear winner and what we’ll be talking about today.
 
-### What does it offer?
+### What does it offer, and what makes it different?
 
 -  prebuilt mixins and functions for CSS3
 -  shortcuts: link colors
 -  Compass Watch
 -  config.rb
 -  Easy way to bundle extensions and extend further
+    -  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
+    -  Bundle extensions, gems can be called in to many projects from a single location
 
-*RWRW Have a date, have to run! Will continue later tonight.*
-
-### What makes it different?
-
--  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
--  Bundle extensions, gems can be called in to many projects from a single location
-
--  Not perfect — use wisely — (clearfix)
+-  Not perfect — use wisely.
+    -  clearfix example — their default is overflow: hidden. What is this, 1999?
 
 ### Further ecosystem
 
 There are tons of compass extensions. Grids, color management, toolkits.
 Don’t write it yourself, use and contribute.
-1 slide, 2 examples, no deeper.
 
--  singularity
--  breakpoint
+-  For example: singularity & breakpoint
+    -  Code/screenshot example.
 
 _*FIVE MINUTE STRETCH - JUMPING JACKS*_
 
 ## Practical Local Workflow
 
-Why?
+Now that you have the basics, here's how to roll sass into a practical, modern local workflow for efficient and enjoyable development
 
-Components:
+### Components:
+
 -  MAMP, Local server
--  Something to compile your sass
+-  Something to compile your sass (compass, guard-compass, codekit/gui)
 -  Livereload
 -  Browser inspection
 
-### Compiling
+### Steps
 
--  Command Line
-    -  Single
+- Why dev locally?
+- What to upload, brief touch on mysql import/ git
+
+- Watching your folders so you don't have to manually compile
+
+- Keep a browser window open.
+    - What is livereload? (style injection)
+    - No page refresh, maintain states. Save time and waiting. Little waits add up.
+
+- (Aside: tools)
+    -  Command Line
         -  Sass
         -  Compass
         -  Livereload
-    -  Bundled
-        - Guard (guard-livereload, guard-compass)
--  GUI
-    -  Compass.app: works in mac, linux, and PC
-    -  Scout: for Windows
-    -  Codekit (livereload doesn't work in Firefox, only webkit)
+        -  Bundled: Guard (guard-livereload, guard-compass)
+    -  GUI
+        -  Compass.app: works in mac, linux, and PC
+        -  Scout: for Windows
+        -  Codekit (livereload doesn't work in Firefox, only webkit)
 
-### Inspection
+- Inspecting your css, revising your sass
+    - Turn on Sass line number comments
+    - Using sass inspector
+    - Going cray cray and saving from the inspector directly to sass.
+
+-----------
+
+### Inspection Notes
 
 -  Browser inspecting: using sass you want to add `Sass::Plugin.options[:debug_info] = true` to `config/environment.rb`. Using Compass you want to add `sass_options = {:debug_info => true}` to `config.rb`
     -  Firesass extension for Firebug
