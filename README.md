@@ -72,7 +72,7 @@ Pretty exhausting to write and maintain your own library. Sass is extensible. Th
     -  Bundle extensions, gems can be called in to many projects from a single location
 -  Not perfect — use wisely.
     -  clearfix example — their default is overflow: hidden. What is this, 1999?
-    -  
+
 ### Further ecosystem
 
 There are tons of compass extensions. Grids, color management, toolkits.
