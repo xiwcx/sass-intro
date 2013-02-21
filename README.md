@@ -40,17 +40,6 @@ Sass is a css preproessor that compiles in to CSS.
 -  Control Directives
 -  Debug
 
-### Best Practices
-
-*The longer this gets the more I think it would go better after Compass*
-
-- Two layer abstraction
-- Populate your extends with a mixin (rwd gotcha)
-- Partials for code organization and mental sanity
-    - It's easier to wrap your head around what this code should do and avoid spreading rules around the css file if you wall it in with a partial.
-- Remember: DON'T EDIT THE CSS
-    - All people working on a project need to buy in to sass
-    - Junk file for the bits and pieces, people who don't know scss
 
 Pretty exhausting to write and maintain your own library. Sass is extensible. There are a few libraries built on top of it, but we're going to focus on
 
@@ -61,17 +50,26 @@ Pretty exhausting to write and maintain your own library. Sass is extensible. Th
 - It's the defacto standard. People build on Sass *and* Compass.
 - It's the clear winner and what we’ll be talking about today.
 
-### What does it offer, and what makes it different?
+### What does it offer, and what makes it different (from sass and other extensions)?
 
--  prebuilt mixins and functions for CSS3
--  shortcuts: link colors
--  Compass Watch
+When most people think compass, they think:
+
+-  prebuilt mixins and functions for CSS3. People contribute to keep them up to date.
+-  shortcuts: link colors mixin
+
+Compass is also:
+
 -  config.rb
--  Easy way to bundle extensions and extend further
     -  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
-    -  Bundle extensions, gems can be called in to many projects from a single location
--  Not perfect — use wisely.
-    -  clearfix example — their default is overflow: hidden. What is this, 1999?
+    -  Extensions can be required together, and the config file shared for people working on the same project
+-  Compass Watch -- Like sass watch (command line tool) but uses the configuration file instead of arguments
+
+Compass is not perfect
+
+- Use wisely. Always check what the mixin/function you're using outputs (example output and source code on site).
+    -  clearfix example — their default is overflow: hidden.
+    -  People try to keep the mixins up to date, but there's a lag
+    -  You always have to understand your tools. Don't use blindly
 
 ### Further ecosystem
 
@@ -81,7 +79,26 @@ Don’t write it yourself, use and contribute.
 -  For example: singularity & breakpoint
     -  Code/screenshot example.
 
-_*FIVE MINUTE STRETCH - JUMPING JACKS*_
+-----
+
+**FIVE MINUTE STRETCH - JUMPING JACKS**
+
+-----
+
+## Best Practices
+
+### Sass/Compass
+
+- Two layer abstraction
+- Populate your extends with a mixin (rwd gotcha)
+- Partials for code organization and mental sanity
+    - It's easier to wrap your head around what this code should do and avoid spreading rules around the css file if you wall it in with a partial.
+- Remember: DON'T EDIT THE CSS
+    - All people working on a project need to buy in to sass
+    - Junk file for the bits and pieces, people who don't know scss
+- WORK LOACALLY. You are a fool to not. 
+    - Some reasons.
+    - Which brings us to...
 
 ## Practical Local Workflow
 
@@ -116,6 +133,8 @@ Now that you have the basics, here's how to roll sass into a practical, modern l
     - Turn on Sass line number comments
     - Using sass inspector
     - Going cray cray and saving from the inspector directly to sass.
+
+## This concludes. Questions?
 
 -----------
 
