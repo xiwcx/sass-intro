@@ -1,11 +1,11 @@
 
-Your Mac, like your server, is a unix based system, which makes it awesome for developing web sites and appications. It even comes with a lot of the applications you would need to set up a server built in.
+Your Mac, like your server, is a unix based system. This makes it awesome for developing web sites and appications as you can set your Mac up to run the same (or at least very similarly) to your production environment. It even comes with a lot of the applications you need to set up a we server built in.
 
-But, you don't necessarily want to start editing configuration files or installing specialized server applications directly in the environment you Mac uses to run itself. Instead, we're going to install applications that *sandbox* server applications and scripts in a separate environment. Sandboxing basically limits what you can mess up, which is a good thing.
+But wait! Don't go enabling apache yet, friend. You don't necessarily want to  edit configuration files or install server applications directly in the environment your Mac uses to run itself. Instead, we'll install some applications that place server apps and scripts in a separate, *sandboxed*environment. Sandboxing helps limit how much of your computer you can mess up, which we can all agree is a good thing.
 
-You'll need a little acumen on the command line to get things set up, but after that it's smooth sailing.
+You'll need a little command line knowledge to get things set up, but after that it's smooth sailing.
 
-### Install these tools in this order:
+## Install these tools in order:
 
 1. Mamp: http://www.mamp.info/en/index.html  
     Mamp is Mac Apache Mysql Php. It's your personal web server on your development machine.  
@@ -31,8 +31,33 @@ You'll need a little acumen on the command line to get things set up, but after 
     Sends notifications from guard (like compass watch errors) to Mac's notifier app.  
     *Install on the command line: gem install terminal-notifier-guard*
 9. LiveReload browser extensions: http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-  
-    LiveReload requires a small browser extension to work.  
+    LiveReload requires a small browser extension to work. These extensions add the javascript snippet LiveReload needs to inject styles without reloading the page.   
     *Download and install like a normal browser extension*
 
-### Config files
+## Config files
+
+Guard and Compass use configuration files to manage their settings. You can share these files between projects and with co-workers. 
+
+These are the files that I use, and are provided as robust starting points. Theyre well commented, but if you have any questions please read the documentation or contact Welch or I for clarification.
+
+### Guardfile
+
+Place the .guardfile in your user directory. It manages settings for all guard instances run in directories below it.
+
+### Compass's config.rb
+
+The config file manages all of the Sass and Compass settings that you would otherwise have to input on the command line. 
+
+Place config.rb in your project or theme folder, and set up a directory structure like this:
+
+- [Project or theme name]
+    - css // Compass will output your compiled css here.
+    - scss // Place your scss files here.
+    - img // All image files used in s/css go here.
+    - js // All javascript files go here.
+    - webtype // Place any webfonts you're serving from your site here.
+
+The settings in Config.rb are used in very interesting ways in advanced Sass and Compass coding. We encourage you to research them yourself.
+
+## Usage
 
