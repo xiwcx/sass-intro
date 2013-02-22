@@ -1,5 +1,5 @@
 
-Your Mac, like your server, is a unix based system. This makes it awesome for developing web sites and appications as you can set your Mac up to run the same (or at least very similarly) to your production environment. It even comes with a lot of the applications you need to set up a we server built in.
+Your Mac, like your server, is a unix based system. This makes it awesome for developing web sites and appications as you can set your Mac up to run the same (or at least very similarly) to your production environment. It even comes with a lot of the applications you need to set up a web server built in.
 
 But wait! Don't go enabling apache yet, friend. You don't necessarily want to  edit configuration files or install server applications directly in the environment your Mac uses to run itself. Instead, we'll install some applications that place server apps and scripts in a separate, *sandboxed*environment. Sandboxing helps limit how much of your computer you can mess up, which we can all agree is a good thing.
 
@@ -13,6 +13,8 @@ You'll need a little command line knowledge to get things set up, but after that
 2. RVM: https://rvm.io/rvm/install/  
     Ruby Version Manager is a good way to automatically manage ruby versions and gems. It's likely that you'll never actually touch any of its advanced functions, but it's good to have. Sass, Compass, Guard, and every Sass/Compass extension are Ruby Gems.  
     *Install directions on site*
+
+    Install the latest version of ruby and remember to [set it as your default](https://rvm.io/rubies/default/)
 3. Sass: http://sass-lang.com  
     *Install on the command line: gem install sass*
 4. Compass: http://compass-style.org/  
@@ -38,7 +40,7 @@ You'll need a little command line knowledge to get things set up, but after that
 
 Guard and Compass use configuration files to manage their settings. You can share these files between projects and with co-workers. 
 
-These are the files that I use, and are provided as robust starting points. Theyre well commented, but if you have any questions please read the documentation or contact Welch or I for clarification.
+These are the files that I use, and are provided as robust starting points. They're well commented, but if you have any questions please read the documentation or contact either of us for clarification.
 
 ### Guardfile
 
@@ -46,7 +48,7 @@ Place the .guardfile in your user directory. It manages settings for all guard i
 
 ### Compass's config.rb
 
-The config file manages all of the Sass and Compass settings that you would otherwise have to input on the command line. 
+The config file manages all of the Sass and Compass settings that you would otherwise have to input on the command line everytime you initiate `compass --watch`. 
 
 Place config.rb in your project or theme folder, and set up a directory structure like this:
 
@@ -57,7 +59,25 @@ Place config.rb in your project or theme folder, and set up a directory structur
     - js // All javascript files go here.
     - webtype // Place any webfonts you're serving from your site here.
 
-The settings in Config.rb are used in very interesting ways in advanced Sass and Compass coding. We encourage you to research them yourself.
+The settings in Config.rb are used in very interesting ways in advanced Sass and Compass coding. We encourage you to research them yourself. Compass's reference for the config file can be found [here](http://compass-style.org/help/tutorials/configuration-reference/)
 
 ## Usage
 
+### MAMP
+- There's a good CSS-Tricks video called [First Moments with MAMP](http://css-tricks.com/video-screencasts/86-mamp/) that is only 20 minutes long. I recommend watching this as he uses MAMP in conjunction with Wordpress.
+- A good default is to set MAMP's root to `/Users/Youruser/Sites` that way you can download a fresh install of Wordpress, move it to this folder and then rename it. Then you can access`/Users/Youruser/Sites/devsite1` by typing `localhost:8888/devsite1` in to your browser's address bar.
+
+### Command Line
+- A simple tutorial for using OS X's command line can be found [here](http://wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx)
+- Also bone up on `mkdir` and `touch` [right here](http://www.slackbook.org/html/file-commands-creation.html).
+- You may want to grab [iTerm 2](http://www.iterm2.com/#/section/home) a far superior terminal to the default that comes with OS X.
+
+### Compass
+
+- Install Compass' config.rb file in your theme's root folder `localhost:8888/devsite1/wp-content/themes/yourtheme` this way compass is only watching the relevant files and folders.
+
+### Migration
+
+- There are a few ways to Migrate.
+    - The simplest is to change the settings in the Wordpress Admin. This Wordpress Codex page shares a few, the relevant section is [When Your Domain Name or URLs Change: If You Don't Care If Your Old Blog Works](http://codex.wordpress.org/Moving_WordPress#If_You_Don.27t_Care_If_Your_Old_Blog_Works). Then upload the database to the new server, this will break the local install.
+    - You can also edit the _siteurl_ and _home_ fields in the _wp_options_ table from `localhost:8888/devsite1` to `http://url.com` once you've imported the database on to the new server. This method is preferable as it leaves both versions functioning.
