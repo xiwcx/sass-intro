@@ -25,9 +25,7 @@ relative_assets = true
 # Display the original location of your selectors in css comments. Defaults to true.
 # line_comments = false
 
-# To debug directly with FireSass or Chrome Web Inspector, set to true.
-debug = false
-# Pass options to sass.
+# To debug directly with FireSass or Chrome Web Inspector, pass options to sass.
 sass_options = (environment == :development && debug == true) ? {:debug_info => true} : {}
 
 # If you prefer the indented syntax, you might want to regenerate this

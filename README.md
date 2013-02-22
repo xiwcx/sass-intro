@@ -93,6 +93,8 @@ Don’t write it yourself, use and contribute.
 - Populate your extends with a mixin (rwd gotcha)
 - Partials for code organization and mental sanity
     - It's easier to wrap your head around what this code should do and avoid spreading rules around the css file if you wall it in with a partial.
+- Let go of how the css looks. Maintainable scss, performant css
+    - explain gzip 
 - Remember: DON'T EDIT THE CSS
     - All people working on a project need to buy in to sass
     - Junk file for the bits and pieces, people who don't know scss
