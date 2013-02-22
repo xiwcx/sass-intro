@@ -80,4 +80,4 @@ The settings in Config.rb are used in very interesting ways in advanced Sass and
 
 - There are a few ways to Migrate.
     - The simplest is to change the settings in the Wordpress Admin. This Wordpress Codex page shares a few, the relevant section is [When Your Domain Name or URLs Change: If You Don't Care If Your Old Blog Works](http://codex.wordpress.org/Moving_WordPress#If_You_Don.27t_Care_If_Your_Old_Blog_Works). Then upload the database to the new server, this will break the local install.
-    - You can also edit the _siteurl_ and _home_ fields in the _wp_options_ table from `localhost:8888/devsite1` to `http://url.com` once you've imported the database on to the new server. This method is preferable as it leaves both versions functioning.
+    - You can also edit the __siteurl__ and __home__ fields in the _wp_options_ table from `localhost:8888/devsite1` to `http://url.com` once you've imported the database on to the new server. This method is preferable as it leaves both versions functioning.
