@@ -20,6 +20,15 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <style type="text/css">
+      .reveal .upper-lower {
+        text-transform: none;
+      }
+      .reveal b {
+        color: hsl(0, 59%, 60%);
+      }
+    </style>
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -37,35 +46,180 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
-					<h1>Sass, Compass, and Working Locally</h1>
-					<p>
-						<small>By <a href="http://twitter.com/xiwcx">Welch Canavan</a> & <a href="http://twitter.com/robwierzbowski">Rob Wierzbowski</a></small>
-					</p>
-				</section>
+<!-- ----------------------------------------------- -->
 
-				<section>
-					<h3>SCSS</h3>
-					<pre><code>$primary-color: red;
+        <section>
+          <h1>Getting Sassay</h1>
+          <h2>Everything you need to know about Sass, Compass, and a practical Local Workflow</h2>
+          <p>
+            <small>By <a href="http://twitter.com/xiwcx">Welch Canavan</a> & <a href="http://twitter.com/robwierzbowski">Rob Wierzbowski</a></small>
+          </p>
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+          <h2 class="fragment"> Sass is a CSS <b>preprocessor</b> </h2>
+          <h2 class="fragment"> written in <b>Ruby</b> </h2>
+          <h2 class="fragment"> that <b>compiles</b> into CSS. </h2>
+          </section>
+
+          <section>
+          <h3>SCSS</h3>
+          <pre><code>$primary-color: red;
 
 .article {
-	background: $primary-color;
+  .title {
+    background: $primary-color;
+  }
 }</pre></code>
 
-					<h3>CSS</h3>
-					<pre><code>.article {
-	background: red;
+          <h3>CSS</h3>
+          <pre><code>.article .title {
+  background: red;
 }</code></pre>
-				</section>
+          </section>
 
-				<section>
+          <section>
+          <h2>Why use sass?</h2>
+          <p class="fragment upper-lower">Reduce repitition <b><em>(no more copy-pasting!)</em></b></p>
+          <p class="fragment upper-lower">Create manageable, well organized code <b><em>(one use, in one place)</em></b></p>
+          <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b><em>(if this then WHAAAT?)</em></b></p>
+          </section>
 
-<pre class="codepen" data-height="300" data-type="result" data-href="ImjGq" data-user="willpaige" data-safe="false"><code></code><a href="http://codepen.io/willpaige/pen/ImjGq">Check out this Pen!</a></pre>
-<script async src="http://codepen.io/assets/embed/ei.js"></script>
+          <section>
+          <h2>Spend your time developing css systems,<br>
+            Not doing busy work.</h2>
+          </section>
+
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+          <h2>The Basics</h2>
+          </section>
+
+          <section>
+          <h2>Sass has two syntaxes:</h2>
+
+          <div class="fragment">
+          <p>Old .Sass</p>
+          <pre><code>#main
+  color: blue
+  font-size: 0.3em</code></pre>
+          </div>
+
+          <div class="fragment">
+          <p>New .Scss</p>
+          <pre><code>#main {
+  color: blue;
+  font-size: 0.3em;
+}</code></pre>
+          </div>
+
+          </section>
+
+          <section>
+          <h2>Write <b>.SCSS</b></h2>
+          <p class="fragment">SCSS is a <em>superset</em> of CSS</p>
+          <p class="fragment">Easy to start. Rename your .css files to .scss</p>
+          <p class="fragment">Use the features you're comfortable with. You can still write normal CSS</p>
+          <p class="fragment">Then, when you're ready,</p>
+          </section>
+
+          <section>
+            <h2><b>Compile</b> your SCSS to CSS</h2>
+            <p class="fragment">The Sass gem turns your .scss into plain .css</p>
+            <p class="fragment">This is what you give the browser</p>
+            <p class="fragment">Sass is a <b>local</b> tool</p>
+
+          </section>
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+          <h2>Let's get into the Language</h2>
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+          <h2>The easy stuff</h2>
+          <ul>
+            <li>Variables</li>
+            <li>Nesting</li>
+          </ul>
+          </section>
+
+          <section>
+            <h2>Variables</h2>
+
+            <pre><code>$imagebox-blue: #337FCC;</code></pre>
+
+            <p class="fragment">Simple replacement of a <b>CSS value</b></p>
+            <p class="fragment">Stop writing the same things over and over</p>
+            <p class="fragment">Colors, font stacks, grid padding</p>
+            <p class="fragment">Change all values in a stylesheet from one place</p>
+          </section>
+
+          <section>
+
+            <pre><code>$imagebox-blue: #337FCC;
+$font-primary: Baskerville, Times, serif;
+$sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
+
+          </section>
+
+          <section>
+            <h2>SCSS</h2>
+            <pre><code>$imagebox-blue: #337FCC;
+
+.title {
+  margin: 1.6 0;
+  color: $imagebox-blue;
+  font-size: 2rem;
+}
+.action-link:hover {
+  border-bottom: solid 1px $imagebox-blue;
+}</code></pre>
+          </section>
+
+          <section>
+            <p> compiles to </p>
+          </section>
+
+          <section>
+            <h2>CSS</h2>
+            <pre><code>.title {
+  margin: 1.6 0;
+  color: <b>#337FCC</b>;
+  font-size: 2rem;
+}
+.action-link:hover {
+  border-bottom: solid 1px #337FCC;
+}</code></pre>
+          </section>
 
 
 
-				</section>
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+
+        </section>
+
+<!-- ----------------------------------------------- -->
 
 			</div>
 
