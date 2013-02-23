@@ -604,41 +604,42 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 				</section>
 
 				<section>
-					<h2>CSS3 Mixins</h2>
-
-					<pre class="codepen" data-height="300" data-type="css" data-href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
-					  background-color: #444444;
-					  background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
-					  background-image: -webkit-linear-gradient(top, #444444, #999999);
-					  background-image:    -moz-linear-gradient(top, #444444, #999999);
-					  background-image:      -o-linear-gradient(top, #444444, #999999);
-					  background-image:         linear-gradient(to bottom, #444444, #999999);
-					}
-
-					.w-c {
-					  @include background(linear-gradient(#444444, #999999));
-					}
-
-					.w-c,
-					.wo-c {
-					  width: 100px;
-					  height: 100px;
-					  margin-right: 1em;
-					  float: left;
-					}</code><a href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
-					<script async src="http://codepen.io/assets/embed/ei.js"></script>
-
-					<a href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.org/reference/compass/css3/images/</a>
-					<aside class="notes">
-					<aside>
-				</section>
-
-				<section>
 					<section>
-						<h2>Shortcuts</h2>
+						<h2>Mixins</h2>
 					</section>
 
+        <section>
+          <h3>CSS3 Mixins</h3>
+
+            <pre class="codepen" data-height="300" data-type="css" data-href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
+              background-color: #444444;
+              background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
+              background-image: -webkit-linear-gradient(top, #444444, #999999);
+              background-image:    -moz-linear-gradient(top, #444444, #999999);
+              background-image:      -o-linear-gradient(top, #444444, #999999);
+              background-image:         linear-gradient(to bottom, #444444, #999999);
+            }
+
+            .w-c {
+              @include background(linear-gradient(#444444, #999999));
+            }
+
+            .w-c,
+            .wo-c {
+              width: 100px;
+              height: 100px;
+              margin-right: 1em;
+              float: left;
+            }</code><a href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
+            <script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+            <a href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.org/reference/compass/css3/images/</a>
+            <aside class="notes">
+            <aside>
+          </section>
+
 					<section>
+            <h3>Mixins for Common Patterns</h3>
 						<h4>CSS</h4>
 						<pre><code>
 a:link { color: #B2FF99; }
@@ -705,7 +706,7 @@ a {
 					</section>
 
 					<section>
-						<h3>Extenstions: All Together Now</h3>
+						<h3>Compass Extenstions: All Together Now</h3>
 						<pre><code>
 $med: 500px;
 $lrg: 800px;
@@ -724,7 +725,7 @@ $grids: 2, 6 $med, 12 $lrg;
     }
 }
 						</pre></code>
-						<p>This example uses <a href="http://singularity.gs">Singularity</a> and <a href="https://github.com/canarymason/breakpoint">Breakpoint</a> syntax.
+						<p>This example uses <a href="http://singularity.gs">Singularity</a> and <a href="https://github.com/canarymason/breakpoint">Breakpoint</a> gems.
 
 					</section>
 
