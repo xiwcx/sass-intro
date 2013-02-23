@@ -554,11 +554,386 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
       <section>
 
+<<<<<<< HEAD
       </section>
 
 <!-- ----------------------------------------------- -->
 
 <!-- ----------------------------------------------- -->
+
+				</section>
+
+				<section>
+					<img src="img/library.jpeg">
+					<aside class="notes">
+						It's a lot of work to build (and more importantly) maintain a large library of mixins.
+					<aside>
+				</section>
+
+<!-- ==============
+===================
+			COMPASS
+===================
+=============== -->
+
+				<section>
+					<h1>Enter Compass</h1>
+				</section>
+
+				<section>
+					<img src="img/compass.png"><h1>&gt;</h1><img src="img/bourbon.png">
+					<aside class="notes">
+						Out of this need there have emerged two main frameworks. In our opinion Compass is a clear winner and that's what we'll be discussing today.
+					<aside>
+				</section>
+
+				<section>
+					<h2>Why is it the winner?</h2>
+					<p>
+						<ul>
+							<li>Much larger library</li>
+							<li>Many more extensions</li>
+							<li>Broad base of support</li>
+							<li>Finer control through config.rb</li>
+							<li>Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)</li>
+						</ul>
+					</p>
+
+					<p><em>it's the defacto standard</em></p>
+					<aside class="notes">
+					<aside>
+				</section>
+>>>>>>> 2cc5442a300ed7f7a1a3baea46e45c333b8a6d3b
+
+				<section>
+					<h2>CSS3 Mixins</h2>
+
+					<pre class="codepen" data-height="300" data-type="css" data-href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
+					  background-color: #444444;
+					  background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
+					  background-image: -webkit-linear-gradient(top, #444444, #999999);
+					  background-image:    -moz-linear-gradient(top, #444444, #999999);
+					  background-image:      -o-linear-gradient(top, #444444, #999999);
+					  background-image:         linear-gradient(to bottom, #444444, #999999);
+					}
+
+					.w-c {
+					  @include background(linear-gradient(#444444, #999999));
+					}
+
+					.w-c,
+					.wo-c {
+					  width: 100px;
+					  height: 100px;
+					  margin-right: 1em;
+					  float: left;
+					}</code><a href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+					<a href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.org/reference/compass/css3/images/</a>
+					<aside class="notes">
+					<aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Shortcuts</h2>
+					</section>
+
+					<section>
+						<h4>CSS</h4>
+						<pre><code>
+a:link { color: #B2FF99; }
+a:hover { color: #FF704D; }
+a:active {  color: #FF704D; }
+a:visited { color: #FFFF85; }
+a:focus { color: #FF704D; }
+						</pre></code>
+					</section>
+
+					<section>
+						<h4>SCSS</h4>
+						<pre><code>
+a {
+  &:link { color: #B2FF99 }
+  &:hover { color: #FF704D; }
+  &:active { color: #FF704D; }
+  &:visited { color: #FFFF85; }
+  &:focus { color: #FF704D; }
+}
+						</pre></code>
+					</section>
+
+					<section>
+						<h4>SCSS w/ Compass</h4>
+						<pre><code>
+a {
+  @include link-colors( #B2FF99, #FF704D, #FF704D, #FFFF85, #FF704D );
+}
+						</pre></code>
+
+						<a href="http://compass-style.org/reference/compass/typography/links/link_colors/">http://compass-style.org/reference/compass/typography/links/link_colors/</a>
+					</section>
+
+					<aside class="notes">
+					<aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Wait, there's more!</h2>
+					</section>
+
+					<section>
+						<h3>config.rb</h3>
+
+						<img src="img/configrb.png">
+
+						<aside class="notes">
+							-  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
+    					-  Extensions can be required together, and the config file shared for people working on the same project
+    					-  compass watch
+						<aside>
+					</section>
+
+					<section>
+						<h3>Massively Extensible</h3>
+
+						<ul>
+							<li><a href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a></li>
+							<li><a href="http://susy.oddbird.net/">Susy</a> for layout</li>
+							<li><a href="https://github.com/canarymason/breakpoint">Breakpoint</a> for media queries</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Extenstions: All Together Now</h3>
+						<pre><code>
+$med: 500px;
+$lrg: 800px;
+
+$grids: 2, 6 $med, 12 $lrg;
+
+.main {
+    @include grid-span(2, 1);
+
+    @include breakpoint($med) {
+        @include grid-span(4, 1);
+    }
+
+    @include breakpoint($lrg) {
+        @include grid-span(6, 1);
+    }
+}
+						</pre></code>
+						<p>This example uses <a href="http://singularity.gs">Singularity</a> and <a href="https://github.com/canarymason/breakpoint">Breakpoint</a> syntax.
+
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Use Wisely!</h2>
+					</section>
+					<section>
+						<p>The clearfix Compass includes is outdated</p>
+						<pre><code>
+div {
+    @include clearfix;
+}
+						</pre></code>
+						<p>Output:</p>
+						<pre><code>
+div {
+  overflow: hidden;
+  *zoom: 1;
+}
+						</pre></code>
+					</section>
+					<section>
+						<p>You'd be better off with:</p>
+						<pre><code>
+@mixin cf{
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%cf {
+    @include cf;
+}
+						</pre></code>
+
+						<small>*<a href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicholas Gallagher Micro Clearfix</a></small>
+					</section>
+					<aside class="notes">
+					<aside>
+				</section>
+
+<!-- ==============
+===================
+			BREAK
+===================
+=============== -->
+
+				<section>
+					<h1>LET'S TAKE FUCKING BREAK!</h1>
+					<small>unless you don't want to</small>
+				</section>
+
+<!-- ==============
+===================
+	BEST PRACTICES
+===================
+=============== -->
+
+				<section>
+					<h1>Best Practices</h1>
+				</section>
+
+				<section>
+					<h2>Two Layer Abstraction</h2>
+<pre class="codepen" data-height="300" data-type="css" data-href="smykp" data-user="xiwcx" data-safe="true"><code>$red:               hsl(360, 100%, 50%);
+$blue:              hsl(240, 100%, 50%);
+$yellow:            hsl(60, 100%, 50%);
+$green:             hsl(120, 100%, 50%);
+
+$primary-color:     $red;
+$secondary-color:   $blue;
+$tertiary-color:    $yellow;
+$quadrary-color:    $green;
+
+/*
+$yellow-magnolia:   #DEB159;
+$dark-brown:        #2C1209;
+$marroon:           #6D2013;
+$deep-red:          #910F15;
+
+$primary-color:     $yellow-magnolia;
+$secondary-color:   $dark-brown;
+$tertiary-color:    $marroon;
+$quadrary-color:    $deep-red;
+*/
+
+.one {
+  background: $primary-color;
+  @extend %form;
+}
+
+.two {
+  background: $secondary-color;
+  @extend %form;
+}
+
+.three {
+  background: $tertiary-color;
+  @extend %form;
+}
+
+.four {
+  background: $quadrary-color;
+  @extend %form;
+}
+
+%form {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 5px;
+}</code><a href="http://codepen.io/xiwcx/pen/smykp">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Partials</h2>
+
+						File Structure
+						<pre><code>
+/ scss
+	- style.scss
+	- _base.scss
+	- _layout.scss
+	- _module.scss
+	- _state.scss
+	- _theme.scss
+						</pre></code>
+
+						style.scss
+						<pre><code>
+@import "base";
+@import "layout";
+@import "module";
+@import "state";
+@import "theme";
+						</pre></code>
+					</section>
+
+					<section>
+						<h2>Nested @imports</h2>
+						File Structure
+						<pre><code>
+/ scss
+	/pages
+		- _archive.scss
+		- _single-post.scss
+		- _custom-template.scss
+						</pre></code>
+
+						_layout.scss
+						<pre><code>
+.container-main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@import "archive";
+@import "single-post";
+@import "custom-template";
+						</pre></code>
+					</section>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>A few more notes...</h2>
+					<ul>
+						<li>Don't edit the CSS</li>
+						<li>Don't worry about how the compiled CSS looks</li>
+						<li>WORK LOCALLY</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<aside class="notes">
+					</aside>
+				</section>
+
+<!-- ==============
+===================
+	LOCAL WORKFLOW
+===================
+=============== -->
+
+				<section>
+					<h1>Practical Local Workflow</h1>
+				</section>
+
+				<section>
+					<aside class="notes">
+					</aside>
+				</section>
 
 			</div>
 

@@ -63,6 +63,9 @@ Compass is also:
     -  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
     -  Extensions can be required together, and the config file shared for people working on the same project
 -  Compass Watch -- Like sass watch (command line tool) but uses the configuration file instead of arguments
+-  Further ecosystem
+    - There are tons of compass extensions. Grids, color management, toolkits. Don’t write it yourself, use and contribute.
+    -  For example: singularity & breakpoint. Code/screenshot example.
 
 Compass is not perfect
 
@@ -71,13 +74,7 @@ Compass is not perfect
     -  People try to keep the mixins up to date, but there's a lag
     -  You always have to understand your tools. Don't use blindly
 
-### Further ecosystem
 
-There are tons of compass extensions. Grids, color management, toolkits.
-Don’t write it yourself, use and contribute.
-
--  For example: singularity & breakpoint
-    -  Code/screenshot example.
 
 -----
 
