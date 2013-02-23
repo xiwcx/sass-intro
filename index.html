@@ -27,6 +27,10 @@
       .reveal b {
         color: hsl(0, 59%, 60%);
       }
+      code mark {
+        color: white;
+        background: #FF5E99;
+      }
     </style>
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -151,13 +155,17 @@
 
         <section>
 
-          <section>
           <h2>The easy stuff</h2>
           <ul>
             <li>Variables</li>
             <li>Nesting</li>
           </ul>
-          </section>
+
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
 
           <section>
             <h2>Variables</h2>
@@ -184,11 +192,11 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
 .title {
   margin: 1.6 0;
-  color: $imagebox-blue;
+  color: <mark>$imagebox-blue</mark>;
   font-size: 2rem;
 }
 .action-link:hover {
-  border-bottom: solid 1px $imagebox-blue;
+  border-bottom: solid 1px <mark>$imagebox-blue</mark>;
 }</code></pre>
           </section>
 
@@ -200,14 +208,188 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <h2>CSS</h2>
             <pre><code>.title {
   margin: 1.6 0;
-  color: <b>#337FCC</b>;
+  color: <mark>#337FCC</mark>;
   font-size: 2rem;
 }
 .action-link:hover {
-  border-bottom: solid 1px #337FCC;
+  border-bottom: solid 1px <mark>#337FCC</mark>;
 }</code></pre>
           </section>
 
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+            <h2>Nesting</h2>
+
+            <pre><code>article {
+  .title {
+    color: green;
+  }
+}</code></pre>
+
+            <p class="fragment">Stop writing the same things over and over</p>
+            <p class="fragment">Smaller Sass stylesheets. See at a glance how selectors relate to each other</p>
+            <p class="fragment">Quicker debugging. Move, don't type.</p>
+          </section>
+
+          <section>
+          <h2>SCSS</h2>
+          <pre><code>.article {
+  margin-bottom: 2em;
+  .title {
+    font-size: 2em;
+    background: $primary-color;
+  }
+  .subtitle {
+    font-size: 1.5em;
+  }
+}</pre></code>
+          </section>
+
+          <section>
+            <p>compiles to</p>
+          </section>
+
+          <section>
+          <h2>CSS</h2>
+          <pre><code>.article { margin-bottom: 2em; }
+.article .title { font-size: 2em; background: red; }
+.article .subtitle { font-size: 1.5em; }</code></pre>
+          </section>
+
+          <section>
+            <h2>The <b>&</b> selector <br> represents a nested selector's <br> <b>parent selector</b></h2>
+          </section>
+
+          <section>
+            <h2>SCSS</h2>
+            <pre><code>a {
+  text-decoration: none;
+  <mark>&</mark>:hover {
+    text-decoration: underline;
+  }
+}
+
+.article {
+  margin-bottom: 2rem;
+  .front-page <mark>&</mark> {
+    margin-bottom: 1rem;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p> compiles to </p>
+          </section>
+
+          <section>
+            <h2>CSS</h2>
+            <pre><code>a { text-decoration: none; }
+<mark>a</mark>:hover { text-decoration: underline; }
+
+.article { margin-bottom: 2rem; }
+.front-page <mark>.article</mark> { margin-bottom: 1rem; }</code></pre>
+
+          </section>
+
+          <section>
+            <h2>Careful!</h2>
+            <p class="fragment">Don't nest too greedily, or too deep</p>
+            <p class="fragment">Too much nesting binds the css with html structure</p>
+            <p class="fragment"><b>Inception Rule:</b> Three levels is pushing it — Four is too many
+          </section>
+
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <h2>Level up</h2>
+          <ul>
+            <li>Mixins, arguments</li>
+            <li>Extend</li>
+            <li>Functions</li>
+          </ul>
+
+        </section>
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+            <h2>Mixins</h2>
+
+            <pre><code>.action-item {
+  @include sassy-button("shiny");
+}</code></pre>
+
+            <p class="fragment">Bundle and reuse <b>a group of css rules</b></p>
+            <p class="fragment"><em>Stop writing the same things over and over</em></p>
+            <p class="fragment">Use to create a library of styles to re-use during and between projects</p>
+          </section>
+
+          <section>
+            <h2>SCSS</h2>
+            <h2>First, you <b>define</b> the mixin</h2>
+            <pre><code>@mixin clearfix() {
+  *zoom: 1;
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}</code></pre>
+          </section>
+
+          <section>
+            <h2>Then, you <b>include</b> the mixin</h2>
+            <pre><code>.container {
+  @include clearfix();
+}</code></pre>
+          </section>
+
+          <section>
+            <p> which compiles to </p>
+          </section>
+
+          <section>
+            <h2>CSS</h2>
+            <pre><code>.container {
+  *zoom: 1;
+}
+.container:before {
+  content: " ";
+  display: table;
+}
+.container:after {
+  content: " ";
+  display: table;
+  clear: both;
+}</code></pre>
+          </section>
+
+          <section>
+            <h2>Mixins can take <b>arguments</b></h2>
+
+            <pre><code>.action-item {
+  @include border-radius(<mark>10px</mark>);
+}</code></pre>
+
+            <p class="fragment">Arguments pass information to the mixin</p>
+            <p class="fragment">RWRW TODO</p>
+
+          </section>
 
 
         </section>
@@ -216,8 +398,165 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
         <section>
 
+          <section>
+            <h2>Placeholders and Extend</h2>
+
+            <pre><code>.subtitle {
+  @extend %secondary-title;
+}</code></pre>
+
+            <p class="fragment">Placeholders are like mixins, but without arguments</p>
+            <p class="fragment">The rules they contain are <b>only printed if they're extended</b></p>
+            <p class="fragment">Instead of duplicating code every time it's called, extend creates a <b>comma separated list of selectors and a single set of rules</b></p>
+            <p class="fragment">Use these together for Sass awesomeness</p>
+
+          </section>
+
+            <section>
+            <h2>SCSS</h2>
+            <h2>First, you <b>define</b> the placeholder</h2>
+            <pre><code>%secondary-title {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  color: green;
+}</code></pre>
+          </section>
+
+          <section>
+          <h2>Then, you <b>extend</b> the placeholder</h2>
+          <pre><code>article .subtitle {
+  @extend %secondary-title;
+}
+...
+.callout-title {
+  @extend %secondary-title;
+}</code></pre>
+          </section>
+
+          <section>
+            <p> which compiles to </p>
+          </section>
+
+          <section>
+          <h2>CSS</h2>
+        <pre><code><mark>article .subtitle</mark>, <mark>.callout-title</mark> {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  color: green;
+}</code></pre>
+          </section>
+
+          <section>
+          <h2>Careful!</h2>
+          <p class="fragment">You can extend placeholders <em>and</em> normal selectors</p>
+          <p class="fragment">Don't extend selectors</p>
+          <div class="fragment">
+          <p>Watch out for placeholders inside of media queries</p>
+          <pre><code>.this-style, .that-style, @media (min-width: 25em) { .other_style {} }, .last-style {
+  ...
+}</code></pre>
+          </div>
+          </section>
 
         </section>
+
+<!-- ----------------------------------------------- -->
+
+
+<!-- ----------------------------------------------- -->
+
+        <section>
+
+          <section>
+            <h2>Functions</h2>
+
+            <pre><code>.alert-message {
+  background: tint($primary-color, 20%);
+}</code></pre>
+
+            <p class="fragment">Functions are like mixins, but they return a <b>single value</b></p>
+            <p class="fragment">Like mixins, they can (and almost always do) take <b>arguments</b></p>
+            <p class="fragment">Often used to alter a value you're already reusing, or for calculation</p>
+
+          </section>
+
+           <section>
+            <h2>SCSS</h2>
+            <h2><b>Define</b> it</h2>
+            <pre><code>@function greenify($color) {
+  $color: mix($color, green, 30%);
+  @return $color;
+}
+</code></pre>
+        </section>
+
+          <section>
+            <h2><b style="color:hsl(240, 28%, 57%)">Use</b> it</h2>
+            <pre><code> $text-color: hsl(240, 28%, 57%);
+.forrest-button {
+  color: greenify$text-color);
+}
+</code></pre>
+</section>
+
+         <section>
+            <p> and you get </p>
+          </section>
+
+          <section>
+          <h2 style="color:hsl(132, 57%, 31%)">CSS</h2>
+        <pre><code>.forrest-button {
+  color: hsl(132, 57%, 31%);
+}</code></pre>
+      </section>
+
+<!-- ----------------------------------------------- -->
+
+      <section>
+
+        <h2>A peek into the Advanced</h2>
+        <ul>
+          <li>Math</li>
+          <li>Control Directives <b>(@if, @else)</b></li>
+          <li>@debug</li>
+        </ul>
+
+      </section>
+
+<!-- ----------------------------------------------- -->
+
+      <section>
+
+        <section>
+            <h2>Math</h2>
+
+            <pre><code>.alert-message {
+  background: tint($primary-color, 20%);
+}</code></pre>
+
+        </section>
+
+      </section>
+
+<!-- ----------------------------------------------- -->
+
+      <section>
+
+      </section>
+
+<!-- ----------------------------------------------- -->
+
+      <section>
+
+      </section>
+
+<!-- ----------------------------------------------- -->
+
+      <section>
+
+      </section>
+
+<!-- ----------------------------------------------- -->
 
 <!-- ----------------------------------------------- -->
 
