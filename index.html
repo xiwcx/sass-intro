@@ -277,11 +277,6 @@ div {
 					<aside> 
 				</section>
 
-				<section>
-					<aside class="notes">
-					</aside>
-				</section>
-
 <!-- ==============
 ===================
 			BREAK
@@ -301,6 +296,124 @@ div {
 
 				<section>
 					<h1>Best Practices</h1>
+				</section>
+
+				<section>
+					<h2>Two Layer Abstraction</h2>
+<pre class="codepen" data-height="300" data-type="css" data-href="smykp" data-user="xiwcx" data-safe="true"><code>$red:               hsl(360, 100%, 50%);
+$blue:              hsl(240, 100%, 50%);
+$yellow:            hsl(60, 100%, 50%);
+$green:             hsl(120, 100%, 50%);
+
+$primary-color:     $red;
+$secondary-color:   $blue;
+$tertiary-color:    $yellow;
+$quadrary-color:    $green;
+
+/*
+$yellow-magnolia:   #DEB159;
+$dark-brown:        #2C1209;
+$marroon:           #6D2013;
+$deep-red:          #910F15;
+
+$primary-color:     $yellow-magnolia;
+$secondary-color:   $dark-brown;
+$tertiary-color:    $marroon;
+$quadrary-color:    $deep-red;
+*/
+
+.one {
+  background: $primary-color;
+  @extend %form;
+}
+
+.two {
+  background: $secondary-color;
+  @extend %form;
+}
+
+.three {
+  background: $tertiary-color;
+  @extend %form;
+}
+
+.four {
+  background: $quadrary-color;
+  @extend %form;
+}
+
+%form {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 5px;
+}</code><a href="http://codepen.io/xiwcx/pen/smykp">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Partials</h2>
+
+						File Structure
+						<pre><code>
+/ scss
+	- style.scss
+	- _base.scss
+	- _layout.scss
+	- _module.scss
+	- _state.scss
+	- _theme.scss
+						</pre></code>
+
+						style.scss
+						<pre><code>
+@import "base";
+@import "layout";
+@import "module";
+@import "state";
+@import "theme";
+						</pre></code>
+					</section>
+
+					<section>
+						<h2>Nested @imports</h2>
+						File Structure
+						<pre><code>
+/ scss
+	/pages
+		- _archive.scss
+		- _single-post.scss
+		- _custom-template.scss
+						</pre></code>
+
+						_layout.scss
+						<pre><code>
+.container-main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@import "archive";
+@import "single-post";
+@import "custom-template";
+						</pre></code>
+					</section>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>A few more notes...</h2>
+					<ul>
+						<li>Don't edit the CSS</li>
+						<li>Don't worry about how the compiled CSS looks</li>
+						<li>WORK LOCALLY</li>
+					</ul>
+					<aside class="notes">
+					</aside>
 				</section>
 
 				<section>
