@@ -101,24 +101,16 @@ Compass is not perfect
 
 ## Practical Local Workflow
 
+- Why dev locally?
+    - check your work much faster (no FTP)
+    - 
+
 Now that you have the basics, here's how to roll sass into a practical, modern local workflow for efficient and enjoyable development
 
 ### Components:
 
 -  MAMP, Local server
--  Something to compile your sass (compass, guard-compass, codekit/gui)
--  Livereload
--  Browser inspection
-
-### Steps
-
-- Why dev locally?
-- What to upload, brief touch on mysql import/ git
-- Watching your folders so you don't have to manually compile
-- Keep a browser window open.
-    - What is livereload? (style injection)
-    - No page refresh, maintain states. Save time and waiting. Little waits add up.
-- (Aside: tools)
+-  Compiling your sass (compass, guard-compass, codekit/gui)
     -  Command Line
         -  Sass
         -  Compass
@@ -128,10 +120,18 @@ Now that you have the basics, here's how to roll sass into a practical, modern l
         -  Compass.app: works in mac, linux, and PC
         -  Scout: for Windows
         -  Codekit (livereload doesn't work in Firefox, only webkit)
+-  Style injection
+    - Keep a browser window open.
+    - What is livereload? (style injection)
+    - No page refresh, maintain states. Save time and waiting. Little waits add up.
 - Inspecting your css, revising your sass
     - Turn on Sass line number comments
     - Using sass inspector
-    - Going cray cray and saving from the inspector directly to sass.
+    - Going cray cray and saving from the inspector directly to sass
+- What to upload, brief touch on mysql import/ git
+
+
+
 
 ## This concludes. Questions?
 
