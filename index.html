@@ -21,9 +21,6 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
     <style type="text/css">
-      .reveal .upper-lower {
-        text-transform: none;
-      }
       .reveal b {
         color: hsl(0, 59%, 60%);
       }
@@ -88,9 +85,9 @@
 
           <section>
           <h2>Why use sass?</h2>
-          <p class="fragment upper-lower">Reduce repitition <b><em>(no more copy-pasting!)</em></b></p>
-          <p class="fragment upper-lower">Create manageable, well organized code <b><em>(one use, in one place)</em></b></p>
-          <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b><em>(if this then WHAAAT?)</em></b></p>
+          <p class="fragment">Reduce repitition <b><em>(no more copy-pasting!)</em></b></p>
+          <p class="fragment">Create manageable, well organized code <b><em>(one use, in one place)</em></b></p>
+          <p class="fragment">Add simple logic to the declaritive language of CSS <b><em>(if this then WHAAAT?)</em></b></p>
           </section>
 
           <section>
@@ -201,7 +198,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> compiles to </p>
+            <p> compile it! </p>
           </section>
 
           <section>
@@ -251,7 +248,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p>compiles to</p>
+            <p>compile it!</p>
           </section>
 
           <section>
@@ -284,7 +281,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> compiles to </p>
+            <p>compile it!</p>
           </section>
 
           <section>
@@ -339,7 +336,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <h2>SCSS</h2>
             <h2>First, you <b>define</b> the mixin</h2>
             <pre><code>@mixin clearfix() {
-  *zoom: 1;
   &:before {
     content: " ";
     display: table;
@@ -360,7 +356,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> which compiles to </p>
+            <p> compile it! </p>
           </section>
 
           <section>
@@ -386,12 +382,29 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
   @include border-radius(<mark>10px</mark>);
 }</code></pre>
 
-            <p class="fragment">Arguments pass information to the mixin</p>
-            <p class="fragment">RWRW TODO</p>
+            <p class="fragment">Arguments pass information into the mixin</p>
 
           </section>
 
+          <section>
+            <h2>For example..</h2>
+            <pre><code>@mixin size-box($width, $height, $bg-color: white) {
+  width: $width;
+  height: $height;
+  background: $bg-color;
+}</code></pre>
 
+<pre class="fragment"><code>.container {
+  @include size-box(50%, 450px);
+}</code></pre>
+
+<pre class="fragment"><code>.container {
+  width: 50%;
+  height: 450px;
+  background: white;
+}</code></pre>
+
+          </section>
         </section>
 
 <!-- ----------------------------------------------- -->
@@ -434,7 +447,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> which compiles to </p>
+            <p> compile it! </p>
           </section>
 
           <section>
@@ -459,9 +472,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
         </section>
-
-<!-- ----------------------------------------------- -->
-
 
 <!-- ----------------------------------------------- -->
 
@@ -500,7 +510,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 </section>
 
          <section>
-            <p> and you get </p>
+            <p> compiled! </p>
           </section>
 
           <section>
@@ -510,14 +520,16 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 }</code></pre>
       </section>
 
+    </section>
+
 <!-- ----------------------------------------------- -->
 
       <section>
 
-        <h2>A peek into the Advanced</h2>
+        <h2>A peek into Advanced Sass</h2>
         <ul>
           <li>Math</li>
-          <li>Control Directives <b>(@if, @else)</b></li>
+          <li>Control Directives (<b>@if, @else</b>)</li>
           <li>@debug</li>
         </ul>
 
@@ -528,19 +540,53 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
       <section>
 
         <section>
-            <h2>Math</h2>
-
-            <pre><code>.alert-message {
-  background: tint($primary-color, 20%);
+          <h2>Math</h2>
+          <pre><code>@mixin size-box($width, $height, $border-width) {
+  width: $width - $border-width;
+  height: $height - $border-width;
+  background: $bg-color;
 }</code></pre>
 
         </section>
 
-      </section>
+        <section>
 
-<!-- ----------------------------------------------- -->
+<h2>Control Directives</h2>
+<p>Standard logic constructs: <b>@if, @for, @each, @while</b></p>
+<pre><code>@mixin clearfix($legacy) {
+  @if $legacy == true {
+    zoom:1;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}</code></pre>
 
-      <section>
+        </section>
+
+<section>
+<h2>@debug</h2>
+<h3><b>Agghhhhhh why didn't that work?</b></h3>
+
+<div class="fragment">
+<h3>Scss</h3>
+<pre><code>@debug $variable;
+</code></pre>
+</div>
+
+<div class="fragment">
+<h3>In your terminal window</h3>
+<pre><code>scss/style.scss:70 DEBUG: false
+</code></pre>
+</div>
+
+</section>
 
       </section>
 
