@@ -95,7 +95,7 @@
           <p class="fragment upper-lower">Reduce repitition <b>(no more copy-pasting!)</b></p>
           <p class="fragment upper-lower">Create manageable, well organized code <b>(one use, in one place)</b></p>
           <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b>(if this then WHAAAT?)</b></p>
-          <p class="fragment upper-lower">Built in error checking <b>no more hunting missing semicolons!)</b></p>
+          <p class="fragment upper-lower">Built in error checking <b>(no more hunting missing semicolons!)</b></p>
 
           </section>
 
@@ -121,7 +121,8 @@
           <p>Old .Sass</p>
           <pre><code>#main
   color: blue
-  font-size: 0.3em</code></pre>
+  font-size: 0.3em
+  +link-colors(#00c, #0cc, #c0c, #ccc, #cc0)</code></pre>
           </div>
 
           <div class="fragment">
@@ -129,6 +130,7 @@
           <pre><code>#main {
   color: blue;
   font-size: 0.3em;
+  @include link-colors(#00c, #0cc, #c0c, #ccc, #cc0);
 }</code></pre>
           </div>
 
@@ -139,7 +141,11 @@
           <p class="fragment">SCSS is a <em>superset</em> of CSS</p>
           <p class="fragment">Easy to start. Rename your .css files to .scss</p>
           <p class="fragment">Use the features you're comfortable with. You can still write normal CSS</p>
-          <p class="fragment">Then, when you're ready,</p>
+          </section>
+
+          <section>
+            <h2>Sass files aren't useful on their own.</h2>
+            <p class="fragment">After you create or change an .scss file, you have to...</p>
           </section>
 
           <section>
@@ -194,7 +200,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
           <section>
             <h2>SCSS</h2>
-            <pre><code>$imagebox-blue: #337FCC;
+            <pre><code><mark>$imagebox-blue</mark>: #337FCC;
 
 .title {
   margin: 1.6 0;
@@ -306,7 +312,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
 .article { margin-bottom: 2rem; }
 .home <mark>.article</mark> { margin-bottom: 1rem; }
-.no-svg .header { background: url(../img/logo.png); }</code></pre>
+.no-svg <mark>.header</mark> { background: url(../img/logo.png); }</code></pre>
 
           </section>
 
@@ -400,8 +406,30 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <h2>For example..</h2>
-            <pre><code>@mixin size-box($width, $height, $bg-color: white) {
+            <h2>For example...</h2>
+
+            <pre><code>@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}</code></pre>
+
+<pre class="fragment"><code>.container {
+  @include border-radius(10px);
+}</code></pre>
+
+<pre class="fragment"><code>.container {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}</code></pre>
+
+</section>
+
+
+<section>
+
+<pre><code>@mixin size-box($width, $height, $bg-color: white) {
   width: $width;
   height: $height;
   background: $bg-color;
@@ -566,11 +594,11 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           <h2>Math</h2>
           <pre><code>$gutter: 1em;
 .container {
-  padding: $gutter;
+  padding: 0 $gutter/2;
 }
 
-.column {
-  margin: 0 $gutter/2;
+.article {
+  margin: 0 $gutter/2 $gutter;
 }</code></pre>
 
         </section>
@@ -616,16 +644,22 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
       </section>
 
-				<section>
-					<img src="img/library.jpeg">
-					<aside class="notes">
-						It's a lot of work to build (and more importantly) maintain a large library of mixins.
-					</aside>
-				</section>
+<!-- ==============
+===================
+			Part 2
+===================
+=============== -->
+
+        <section>
+          <img src="img/library.jpeg">
+          <aside class="notes">
+            It's a lot of work to build (and more importantly) maintain a large library of mixins.
+          </aside>
+        </section>
 
 <!-- ==============
 ===================
-			COMPASS
+      COMPASS
 ===================
 =============== -->
 
@@ -660,27 +694,27 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
         <section>
           <h2>CSS3 Mixins</h2>
 
-            <pre class="codepen" data-height="300" data-type="css" data-target="_blank" href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
-              background-color: #444444;
-              background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
-              background-image: -webkit-linear-gradient(top, #444444, #999999);
-              background-image:    -moz-linear-gradient(top, #444444, #999999);
-              background-image:      -o-linear-gradient(top, #444444, #999999);
-              background-image:         linear-gradient(to bottom, #444444, #999999);
-            }
+<pre class="codepen" data-height="300" data-type="css" data-target="_blank" href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
+  background-color: #444444;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
+  background-image: -webkit-linear-gradient(top, #444444, #999999);
+  background-image:    -moz-linear-gradient(top, #444444, #999999);
+  background-image:      -o-linear-gradient(top, #444444, #999999);
+  background-image:         linear-gradient(to bottom, #444444, #999999);
+}
 
-            .w-c {
-              @include background(linear-gradient(#444444, #999999));
-            }
+.w-c {
+  @include background(linear-gradient(#444444, #999999));
+}
 
-            .w-c,
-            .wo-c {
-              width: 100px;
-              height: 100px;
-              margin-right: 1em;
-              float: left;
-            }</code><a target="_blank" href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
-            <script async src="http://codepen.io/assets/embed/ei.js"></script>
+.w-c,
+.wo-c {
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+  float: left;
+}</code><a target="_blank" href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
 
             <a target="_blank" href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.org/reference/compass/css3/images/</a>
             <aside class="notes">
@@ -900,53 +934,101 @@ $quadrary-color:    $deep-red;
 					</aside>
 				</section>
 
+<section>
+
+<section>
+<h2>Use Sass to avoid binding visual Css rules to HTML</h2>
+</section>
+
+<section>
+<p>The old OOCSS way</p>
+<div class="fragment">
+<pre><code>.round-corners {
+...border-radius rules...
+}</code></pre>
+<pre><code>&lt;input class=&quot;btn round-corners&quot;&gt;</code></pre>
+</div>
+
+<p class="fragment">The <b>right</b> way</p>
+<div class="fragment">
+<pre><code>%round-corners {
+...border-radius rules...
+}
+
+.btn {
+  @extend %round-corners;
+}</code></pre>
+<pre><code>&lt;input class=&quot;btn&quot;&gt;</code></pre>
+</div>
+</section>
+
+</section>
+
+<section>
+
+  <section>
+    <h2>Use Placeholders to avoid code bloat</h2>
+    <pre><code>EXAMPLE</code></pre>
+  </section>
+
+  <section>
+    <h2>Populate your placeholders with Mixins</h2>
+    <pre><code>EXAMPLE</code></pre>
+  </section>
+
+</section>
+
+<section>
+
+<section>
+  <h2>Nested <b>@Media</b> directives</h2>
+  <pre><code>EXAMPLE</code></pre>
+  <p class="fragment">Keep your media queries with the styles they're adjusting</p>
+  <p class="fragment">Gzip eats the code repetition</p>
+</section>
+
+</section>
+
+
 				<section>
 					<section>
 						<h2>Partials</h2>
 
 						File Structure
-						<pre><code>
-/ scss
-	- style.scss
-	- _base.scss
-	- _layout.scss
-	- _module.scss
-	- _state.scss
-	- _theme.scss
-						</pre></code>
+						<pre><code>/scss
+  - style.scss
+  - _base.scss
+  - _layout.scss
+  - _module.scss
+  - _state.scss
+  - _theme.scss</pre></code>
 
 						style.scss
-						<pre><code>
-@import "base";
+						<pre><code>@import "base";
 @import "layout";
 @import "module";
 @import "state";
-@import "theme";
-						</pre></code>
+@import "theme";</pre></code>
 					</section>
 
 					<section>
 						<h2>Nested @imports</h2>
 						File Structure
-						<pre><code>
-/ scss
-	/pages
-		- _archive.scss
-		- _single-post.scss
-		- _custom-template.scss
-						</pre></code>
+						<pre><code>/scss
+  /pages
+    - _archive.scss
+    - _single-post.scss
+    - _custom-template.scss</pre></code>
 
 						_layout.scss
-						<pre><code>
-.container-main {
-	max-width: 1200px;
-	margin: 0 auto;
+						<pre><code>.container-main {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @import "archive";
 @import "single-post";
-@import "custom-template";
-						</pre></code>
+@import "custom-template";</pre></code>
 					</section>
 					<aside class="notes">
 					</aside>
@@ -974,7 +1056,7 @@ $quadrary-color:    $deep-red;
 				<section>
           <h2>Why?</h2>
             <p class="fragment">Save yourself a lot of time</p>
-            <p class="fragment">Avoid downtime</p>
+            <p class="fragment">Avoid downtime on the live site</p>
             <p class="fragment"><b><em>Seriously</em></b>, you'll save a lot of time</p>
 					<aside class="notes">
 					</aside>
@@ -986,8 +1068,9 @@ $quadrary-color:    $deep-red;
           </section>
 
           <section>
-            <h2>MAMP, local server</h2>
-            <p class="fragment">Run a full version of Wordpress locally</p>
+            <h2>Local Server with <b>MAMP</b></h2>
+            <p class="fragment"><b>M</b>ac, <b>A</b>pache, <b>M</b>ySql, <b>P</b>hp</p>
+            <p class="fragment">Run a full version of Wordpress on your computer</p>
           </section>
 
           <section>
@@ -1008,13 +1091,21 @@ $quadrary-color:    $deep-red;
 
           <section>
             <h2>Inspection</h2>
-            <p class="fragment">At the least compile with line numbers</p>
+            <p class="fragment">Sass can compile with line number comments</p>
+            <pre class="fragment"><code>/* line 27, ../scss/_base.scss */
+html {
+  color: #212121;
+  font: 100 112.5%/1.4 "Adelle", Georgia, serif;
+  ...
+}</code></pre>
             <p class="fragment">Inspecting Sass in the Browser <b>(Chrome Dev Tools, Firesass)</b></p>
             <p class="fragment">Save edits from the browser <b>(Chrome Only)</b></p>
           </section>
 
           <section>
-            <h2>Version Control</h2>
+            <h2><b>Version Control</b> and <b>Deployment</b></h2>
+            <p class="fragment">Version control: you should probably be using it</p>
+            <p class="fragment">Version control: you should probably be using <b>git</b></p>
             <p class="fragment">Theme folder</p>
             <p class="fragment">Database</p>
           </section>
