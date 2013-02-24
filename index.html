@@ -24,9 +24,13 @@
       .reveal b {
         color: hsl(0, 59%, 60%);
       }
-      code mark {
+      .reveal code mark {
         color: white;
-        background: #FF5E99;
+        background: hsl(338, 49%, 50%);
+        padding: 0 7px;
+      }
+      .alt-bg {
+        background-color: hsla(7, 74%, 45%, .6);
       }
     </style>
 
@@ -259,7 +263,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <h2>The <b>&</b> selector <br> represents a nested selector's <br> <b>parent selector</b></h2>
+            <h2>The <b>&</b> selector <br> represents a nested selector's <br> <b>parent</b></h2>
           </section>
 
           <section>
@@ -277,6 +281,12 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
     margin-bottom: 1rem;
   }
 }
+
+.logo {
+  .no-svg <mark>&</mark> {
+    background: url(../img/logo.png);
+  }
+}
             </code></pre>
           </section>
 
@@ -290,7 +300,8 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 <mark>a</mark>:hover { text-decoration: underline; }
 
 .article { margin-bottom: 2rem; }
-.front-page <mark>.article</mark> { margin-bottom: 1rem; }</code></pre>
+.front-page <mark>.article</mark> { margin-bottom: 1rem; }
+.no-svg .header { background: url(../img/logo.png); }</code></pre>
 
           </section>
 
@@ -329,7 +340,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
             <p class="fragment">Bundle and reuse <b>a group of css rules</b></p>
             <p class="fragment"><em>Stop writing the same things over and over</em></p>
-            <p class="fragment">Use to create a library of styles to re-use during and between projects</p>
+            <p class="fragment">Create a library of styles to re-use, <br>both during and between projects</p>
           </section>
 
           <section>
@@ -440,7 +451,9 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           <pre><code>article .subtitle {
   @extend %secondary-title;
 }
-...
+
+... A bunch of other styles ...
+
 .callout-title {
   @extend %secondary-title;
 }</code></pre>
@@ -462,7 +475,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           <section>
           <h2>Careful!</h2>
           <p class="fragment">You can extend placeholders <em>and</em> normal selectors</p>
-          <p class="fragment">Don't extend selectors</p>
+          <p class="fragment">Don't extend normal selectors</p>
           <div class="fragment">
           <p>Watch out for placeholders inside of media queries</p>
           <pre><code>.this-style, .that-style, @media (min-width: 25em) { .other_style {} }, .last-style {
@@ -504,7 +517,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <h2><b style="color:hsl(240, 28%, 57%)">Use</b> it</h2>
             <pre><code> $text-color: hsl(240, 28%, 57%);
 .forrest-button {
-  color: greenify$text-color);
+  color: greenify($text-color);
 }
 </code></pre>
 </section>
@@ -519,6 +532,14 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
   color: hsl(132, 57%, 31%);
 }</code></pre>
       </section>
+
+<section>
+<h2>Built in Sass Functions</h2>
+<p class="fragment">Sass comes with a few useful functions built in.</p>
+<p class="fragment"><a href="http://sassme.arc90.com/">Color functions in real time</a></p>
+
+
+</section>
 
     </section>
 
