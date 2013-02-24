@@ -52,7 +52,7 @@
 
 <!-- ----------------------------------------------- -->
 
-        <section>
+        <section data-state="alt-bg">
           <h1>Getting Sassay</h1>
           <h2>Everything you need to know about Sass, Compass, and a practical Local Workflow</h2>
           <p>
@@ -91,6 +91,7 @@
           <p class="fragment upper-lower">Reduce repitition <b><em>(no more copy-pasting!)</em></b></p>
           <p class="fragment upper-lower">Create manageable, well organized code <b><em>(one use, in one place)</em></b></p>
           <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b><em>(if this then WHAAAT?)</em></b></p>
+          <p class="fragment upper-lower">Built in error checking <b><em>(no more hunting missing semicolons!)</em></b></p>
           </section>
 
           <section>
@@ -575,7 +576,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 ===================
 =============== -->
 
-				<section>
+				<section data-state="alt-bg">
 					<h1>Enter Compass</h1>
 				</section>
 
@@ -588,17 +589,12 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
 				<section>
 					<h2>Why is it the winner?</h2>
-					<p>
-						<ul>
-							<li>Much larger library</li>
-							<li>Many more extensions</li>
-							<li>Broad base of support</li>
-							<li>Finer control through config.rb</li>
-							<li>Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)</li>
-						</ul>
-					</p>
-
-					<p><em>it's the defacto standard</em></p>
+					<p class="fragment">Much larger library</p>
+					<p class="fragment">Many more extensions</p>
+				  <p class="fragment">Broad base of support</p>
+					<p class="fragment">Finer control through config.rb</p>
+					<p class="fragment">Comes bundled with a ton of other tools (sprite generation, image compression, url helpers..)
+          <p class="fragment"><b><em>it's the defacto standard</em></b></p>
 					<aside class="notes">
 					<aside>
 				</section>
@@ -699,9 +695,9 @@ a {
 						<h3>Massively Extensible</h3>
 
 						<ul>
-							<li><a href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a></li>
+							<li><a href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a>
 							<li><a href="http://susy.oddbird.net/">Susy</a> for layout</li>
-							<li><a href="https://github.com/canarymason/breakpoint">Breakpoint</a> for media queries</li>
+							<li><a href="https://github.com/canarymasobbreakpoint">Breakpoint</a> for media queries</li>
 						</ul>
 					</section>
 
@@ -781,8 +777,8 @@ div {
 ===================
 =============== -->
 
-				<section>
-					<h1>LET'S TAKE FUCKING BREAK!</h1>
+				<section data-state="alt-bg">
+					<h1>LET'S TAKE A FUCKING BREAK!</h1>
 					<small>unless you don't want to</small>
 				</section>
 
@@ -792,7 +788,7 @@ div {
 ===================
 =============== -->
 
-				<section>
+				<section data-state="alt-bg">
 					<h1>Best Practices</h1>
 				</section>
 
@@ -905,16 +901,9 @@ $quadrary-color:    $deep-red;
 
 				<section>
 					<h2>A few more notes...</h2>
-					<ul>
-						<li>Don't edit the CSS</li>
-						<li>Don't worry about how the compiled CSS looks</li>
-						<li>WORK LOCALLY</li>
-					</ul>
-					<aside class="notes">
-					</aside>
-				</section>
-
-				<section>
+          <p class="fragment">Don't edit the CSS</p>
+					<p class="fragment">Don't worry about how the compiled CSS looks</p>
+					<h3 class="fragment"><b>Work Locally</b></h3>
 					<aside class="notes">
 					</aside>
 				</section>
@@ -925,14 +914,65 @@ $quadrary-color:    $deep-red;
 ===================
 =============== -->
 
-				<section>
+				<section data-state="alt-bg">
 					<h1>Practical Local Workflow</h1>
 				</section>
 
 				<section>
+          <h2>Why?</h2>
+            <p class="fragment">Save yourself a lot of time</p>
+            <p class="fragment">Avoid downtime</p>
+            <p class="fragment"><b><em>Seriously</em></b>, you'll save a lot of time</p>
 					<aside class="notes">
 					</aside>
 				</section>
+
+        <section>
+          <section>
+            <h2>Components</h2>
+          </section>
+
+          <section>
+            <h3>MAMP, local server</h3>
+            <p class="fragment">Run a full version of Wordpress locally</p>
+          </section>
+
+          <section>
+            <h3>Compiling Sass</h3>
+            <h4 class="fragment">Command line</h4>
+            <p class="fragment">Single Utilities <b>(Sass, Compass, Livereload)</b></p>
+            <p class="fragment">Bundled: Guard <b>(guard-livereload, guard-compass)</b></p>
+            <h4 class="fragment">GUIs</h4>
+            <p class="fragment">Compass.app <b>(all platforms)</b></p>
+            <p class="fragment">Scout <b>(Windows)</b></p>
+            <p class="fragment">Codekit <b>(OS X)</b></p>
+          </section>
+
+          <section>
+            <h3>Style Injection</h3>
+            <p class="fragment">The ability to see style changes without a browser refresh</p>
+            <p class="fragment">Keep a browser window open</p>
+            <p class="fragment">There are both CLI and GUI options</p>
+          </section>
+          
+          <section>
+            <h3>Inspection</h3>
+            <p class="fragment">At the least compile with line numbers</p>
+            <p class="fragment">Inspecting Sass in the Browser <b>(Chrome Dev Tools, Firesass)</b></p>
+            <p class="fragment">Save edits from the browser <b>(Chrome Only)</b></p>
+          </section>
+
+          <section>
+            <h3>Version Control</h3>
+            <p class="fragment">Theme folder</p>
+            <p class="fragment">Database</p>
+          </section>
+
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+        </section>
 
 			</div>
 
