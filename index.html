@@ -62,6 +62,29 @@
             <small>By <a target="_blank" href="http://twitter.com/xiwcx">Welch Canavan</a> & <a target="_blank" href="http://twitter.com/robwierzbowski">Rob Wierzbowski</a></small>
           </p>
         </section>
+        <section>
+          <pre class="codepen" data-height="300" data-type="css" data-href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
+  background-color: #444444;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
+  background-image: -webkit-linear-gradient(top, #444444, #999999);
+  background-image:    -moz-linear-gradient(top, #444444, #999999);
+  background-image:      -o-linear-gradient(top, #444444, #999999);
+  background-image:         linear-gradient(to bottom, #444444, #999999);
+}
+
+.w-c {
+  @include background(linear-gradient(#444444, #999999));
+}
+
+.w-c,
+.wo-c {
+  width: 100px;
+  height: 100px;
+  margin-right: 1em;
+  float: left;
+}</code><a href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+        </section>
 
 <!-- ----------------------------------------------- -->
 
@@ -671,7 +694,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 					<img src="img/compass.png"><h1>&gt;</h1><img src="img/bourbon.png">
 					<aside class="notes">
 						Out of this need there have emerged two main frameworks. In our opinion Compass is a clear winner and that's what we'll be discussing today.
-					<aside>
+					</aside>
 				</section>
 
 				<section>
@@ -682,8 +705,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 					<p class="fragment">Control through config.rb</p>
 					<p class="fragment">Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)
           <p class="fragment"><b><em>it's the defacto standard</em></b></p>
-					<aside class="notes">
-					<aside>
 				</section>
 
 				<section>
@@ -694,7 +715,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
         <section>
           <h2>CSS3 Mixins</h2>
 
-<pre class="codepen" data-height="300" data-type="css" data-target="_blank" href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
+<pre class="codepen" data-height="300" data-type="css" data-href="HetEl" data-user="xiwcx" data-safe="true"><code>.wo-c {
   background-color: #444444;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#444444), to(#999999));
   background-image: -webkit-linear-gradient(top, #444444, #999999);
@@ -713,12 +734,10 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
   height: 100px;
   margin-right: 1em;
   float: left;
-}</code><a target="_blank" href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
+}</code><a href="http://codepen.io/xiwcx/pen/HetEl">Check out this Pen!</a></pre>
 <script async src="http://codepen.io/assets/embed/ei.js"></script>
 
-            <a target="_blank" href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.org/reference/compass/css3/images/</a>
-            <aside class="notes">
-            <aside>
+            <a target="_blank" href="http://compass-style.org/reference/compass/css3/images/">http://compass-style.
           </section>
 
 					<section>
@@ -756,9 +775,6 @@ a {
 
 						<a target="_blank" href="http://compass-style.org/reference/compass/typography/links/link_colors/">http://compass-style.org/reference/compass/typography/links/link_colors/</a>
 					</section>
-
-					<aside class="notes">
-					<aside>
 				</section>
 
 				<section>
@@ -775,7 +791,7 @@ a {
 							-  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
     					-  Extensions can be required together, and the config file shared for people working on the same project
     					-  compass watch
-						<aside>
+						</aside>
 					</section>
 
 					<section>
@@ -854,8 +870,6 @@ div {
 
 						<small>*<a target="_blank" href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicholas Gallagher Micro Clearfix</a></small>
 					</section>
-					<aside class="notes">
-					<aside>
 				</section>
 
 <!-- ==============
