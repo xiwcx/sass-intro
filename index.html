@@ -61,6 +61,11 @@
           <p>
             <small>By <a target="_blank" href="http://twitter.com/xiwcx">Welch Canavan</a> & <a target="_blank" href="http://twitter.com/robwierzbowski">Rob Wierzbowski</a></small>
           </p>
+
+              <aside class="notes">
+                What are your roles? What is your programming experience? Sass experience? How do you currently organize css?
+              </aside>
+
         </section>
 
 <!-- ----------------------------------------------- -->
@@ -87,15 +92,27 @@
           <pre><code>.article .title {
   background: red;
 }</code></pre>
+
+    <aside class="notes">
+      This is what it looks like.
+    </aside>
+
           </section>
 
           <section>
           <h2>Why use sass?</h2>
 
           <p class="fragment upper-lower">Reduce repitition <b>(no more copy-pasting!)</b></p>
-          <p class="fragment upper-lower">Create manageable, well organized code <b>(one use, in one place)</b></p>
+          <p class="fragment upper-lower">Create manageable, well organized, reusable code <b>(one use, in one place)</b></p>
           <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b>(if this then WHAAAT?)</b></p>
           <p class="fragment upper-lower">Built in error checking <b>(no more hunting missing semicolons!)</b></p>
+
+              <aside class="notes">
+Reduce repitition (no more copy-pasting!)
+Create manageable, well organized code (one use, in one place)
+Add simple logic to the declaritive language of CSS (if this then WHAAAT?)
+Built in error checking (no more hunting missing semicolons!)
+              </aside>
 
           </section>
 
@@ -118,7 +135,7 @@
           <h2>Sass has two syntaxes:</h2>
 
           <div class="fragment">
-          <p>Old .Sass</p>
+          <p>.sass</p>
           <pre><code>#main
   color: blue
   font-size: 0.3em
@@ -126,7 +143,7 @@
           </div>
 
           <div class="fragment">
-          <p>New .Scss</p>
+          <p>.scss</p>
           <pre><code>#main {
   color: blue;
   font-size: 0.3em;
@@ -140,7 +157,14 @@
           <h2>Write <b>.SCSS</b></h2>
           <p class="fragment">SCSS is a <em>superset</em> of CSS</p>
           <p class="fragment">Easy to start. Rename your .css files to .scss</p>
-          <p class="fragment">Use the features you're comfortable with. You can still write normal CSS</p>
+          <p class="fragment">Use the features of sass you're comfortable with. You can still write normal CSS</p>
+
+ <aside class="notes">
+SCSS is a superset of CSS
+Easy to start. Rename your .css files to .scss
+Use the features of sass you're comfortable with. You can still write normal CSS
+</aside>
+
           </section>
 
           <section>
@@ -153,6 +177,12 @@
             <p class="fragment">The Sass gem turns your .scss into plain .css</p>
             <p class="fragment">This is what you give the browser</p>
             <p class="fragment">Sass is a <b>local</b> tool</p>
+
+ <aside class="notes">
+The Sass gem turns your .scss into plain .css
+This is what you give the browser
+Sass is a local tool
+</aside>
 
           </section>
         </section>
@@ -188,6 +218,14 @@
             <p class="fragment">Stop writing the same things over and over</p>
             <p class="fragment">Colors, font stacks, grid padding</p>
             <p class="fragment">Change all values in a stylesheet from one place</p>
+
+ <aside class="notes">
+Simple replacement of a CSS value
+Stop writing the same things over and over
+Colors, font stacks, grid padding
+Change all values in a stylesheet from one place
+</aside>
+
           </section>
 
           <section>
@@ -213,10 +251,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> compile it! </p>
-          </section>
-
-          <section>
             <h2>CSS</h2>
             <pre><code>.title {
   margin: 1.6 0;
@@ -226,6 +260,10 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 .action-link:hover {
   border-bottom: solid 1px <mark>#337FCC</mark>;
 }</code></pre>
+
+<aside class="notes">
+  Everything has been replaced! Use these any time a value is re-usable, or a value means something. Is it your primary site color, your brand color, your column padding?
+</aside>
           </section>
 
         </section>
@@ -245,7 +283,12 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
             <p class="fragment">Stop writing the same things over and over</p>
             <p class="fragment">Smaller Sass stylesheets. See at a glance how selectors relate to each other</p>
-            <p class="fragment">Quicker debugging. Move, don't type.</p>
+
+<aside class="notes">
+Stop writing the same things over and over
+Smaller Sass stylesheets. See at a glance how selectors relate to each other
+</aside>
+
           </section>
 
           <section>
@@ -260,10 +303,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
     font-size: 1.5em;
   }
 }</pre></code>
-          </section>
-
-          <section>
-            <p>compile it!</p>
           </section>
 
           <section>
@@ -302,10 +341,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p>compile it!</p>
-          </section>
-
-          <section>
             <h2>CSS</h2>
             <pre><code>a { text-decoration: none; }
 <mark>a</mark>:hover { text-decoration: underline; }
@@ -313,6 +348,10 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 .article { margin-bottom: 2rem; }
 .home <mark>.article</mark> { margin-bottom: 1rem; }
 .no-svg <mark>.header</mark> { background: url(../img/logo.png); }</code></pre>
+
+<aside class="notes">
+Use nesting to keep related styles together, any time you would write out a compound selector. but...
+</aside>
 
           </section>
 
@@ -352,6 +391,16 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <p class="fragment">Bundle and reuse <b>a group of css rules</b></p>
             <p class="fragment"><em>Stop writing the same things over and over</em></p>
             <p class="fragment">Create a library of styles to re-use, <br>both during and between projects</p>
+
+<aside class="notes">
+  The really good stuff
+Bundle and reuse a group of css rules
+Stop writing the same things over and over
+Create a library of styles to re-use,
+both during and between projects
+</aside>
+
+
           </section>
 
           <section>
@@ -375,10 +424,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <pre><code>.container {
   @include clearfix();
 }</code></pre>
-          </section>
-
-          <section>
-            <p> compile it! </p>
           </section>
 
           <section>
@@ -445,6 +490,10 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
   background: white;
 }</code></pre>
 
+<aside class="notes">
+  Use mixins to bundle your reusable style groups. Custom headers, buttons, hover styles. Mixins can also contain logic, which we'll get to later. Every time you use a mixin it prints the code again and again...
+</aside>
+
           </section>
         </section>
 
@@ -462,7 +511,13 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <p class="fragment">Placeholders are like mixins, but without arguments</p>
             <p class="fragment">The rules they contain are <b>only printed if they're extended</b></p>
             <p class="fragment">Instead of duplicating code every time it's called, extend creates a <b>comma separated list of selectors and a single set of rules</b></p>
-            <p class="fragment">Use these together for Sass awesomeness</p>
+
+<aside class="notes">
+Placeholders are like mixins, but without arguments
+The rules they contain are only printed if they're extended
+Instead of duplicating code every time it's called, extend creates a comma separated list of selectors and a single set of rules
+</aside>
+
 
           </section>
 
@@ -490,10 +545,6 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           </section>
 
           <section>
-            <p> compile it! </p>
-          </section>
-
-          <section>
           <h2>CSS</h2>
         <pre><code><mark>article .subtitle</mark>, <mark>.callout-title</mark> {
   font-size: 1.3em;
@@ -511,6 +562,13 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
           <pre><code>.this-style, .that-style, @media (min-width: 25em) { .other_style {} }, .last-style {
   ...
 }</code></pre>
+
+<aside class="notes">
+You can extend placeholders and normal selectors
+Don't extend normal selectors, will extend everywhere a normal selector is used
+Watch out for placeholders inside of media queries
+</aside>
+
           </div>
           </section>
 
@@ -531,75 +589,69 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
             <p class="fragment">Like mixins, they can (and almost always do) take <b>arguments</b></p>
             <p class="fragment">Often used to alter a value you're already reusing, or for calculation</p>
 
+<aside class="notes">
+Doing good, almost there.
+Functions are like mixins, but they return a single value
+Like mixins, they can (and almost always do) take arguments
+Often used to alter a value you're already reusing, or for calculation
+</aside>
           </section>
 
            <section>
             <h2>SCSS</h2>
-            <h2><b>Define</b> it</h2>
-            <pre><code>@function greenify($color) {
-  $color: mix($color, green, 30%);
-  @return $color;
-}
-</code></pre>
-        </section>
-
-          <section>
             <h2><b style="color:hsl(240, 28%, 57%)">Use</b> it</h2>
             <pre><code> $text-color: hsl(240, 28%, 57%);
-.forrest-button {
-  color: greenify($text-color);
-}
-</code></pre>
-</section>
-
-         <section>
-            <p> compiled! </p>
-          </section>
-
-          <section>
-          <h2 style="color:hsl(132, 57%, 31%)">CSS</h2>
-        <pre><code>.forrest-button {
-  color: hsl(132, 57%, 31%);
+.disabled-button {
+  color: transparentize($text-color, 50%);
 }</code></pre>
-      </section>
+</section>
 
 <section>
 <h2>Built in Sass Functions</h2>
-<p class="fragment">Sass comes with a few useful functions built in.</p>
+<p class="fragment">Sass comes with plenty of useful functions built in.</p>
 <p class="fragment"><a target="_blank" href="http://sassme.arc90.com/">Color functions in real time</a></p>
 
 
+<aside class="notes">
+  You can define and use your own, but most often you'll use the useful built in sass functions. Let's take a look at the color functions on this live preview page.
+</aside>
+
 </section>
+
 
     </section>
 
 <!-- ----------------------------------------------- -->
 
       <section>
+        <section>
 
         <h2>A peek into Advanced Sass</h2>
         <ul>
           <li>Math</li>
           <li>Control Directives (<b>@if, @else</b>)</li>
-          <li>@debug</li>
         </ul>
 
       </section>
 
-<!-- ----------------------------------------------- -->
-
-      <section>
 
         <section>
           <h2>Math</h2>
           <pre><code>$gutter: 1em;
-.container {
+
+%grid-container {
   padding: 0 $gutter/2;
 }
 
-.article {
-  margin: 0 $gutter/2 $gutter;
+%grid-piece {
+  float: left;
+  margin: 0 $gutter/2;
+  margin-bottom: $gutter;
 }</code></pre>
+
+<aside class="notes">
+  like on like calculation
+</aside>
 
         </section>
 
@@ -607,7 +659,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 
 <h2>Control Directives</h2>
 <p>Standard logic constructs: <b>@if, @for, @each, @while</b></p>
-<pre><code>@mixin clearfix($legacy:false) {
+<pre><code>@mixin clearfix($ie:false) {
   @if $legacy == true {
     zoom:1;
   }
@@ -620,25 +672,11 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
     display: table;
     clear: both;
   }
-}</code></pre>
+}
+
+@include clearfix($ie:true);</code></pre>
 
         </section>
-
-<section>
-<h2>@debug</h2>
-<h3><b>Agghhhhhh why didn't that work?</b></h3>
-
-<div class="fragment">
-<h3>Scss</h3>
-<pre><code>@debug $variable;
-</code></pre>
-</div>
-
-<div class="fragment">
-<h3>In your terminal window</h3>
-<pre><code>scss/style.scss:70 DEBUG: false
-</code></pre>
-</div>
 
 </section>
 
@@ -831,7 +869,8 @@ $grids: 2, 6 $med, 12 $lrg;
 						<h2>Use Wisely!</h2>
 					</section>
 					<section>
-						<p>The clearfix Compass includes is outdated</p>
+						<p>Know your tools</p>
+            <p>The clearfix Compass includes is outdated</p>
 						<pre><code>
 div {
   @include clearfix;
@@ -946,44 +985,13 @@ $quadrary-color:    $deep-red;
 
 <section>
 
-<section>
-<h2>Use Sass to avoid binding visual Css rules to HTML</h2>
-</section>
-
-<section>
-<p>The old OOCSS way</p>
-<div class="fragment">
-<pre><code>.round-corners {
-...border-radius rules...
-}</code></pre>
-<pre><code>&lt;input class=&quot;btn round-corners&quot;&gt;</code></pre>
-</div>
-
-<p class="fragment">The <b>right</b> way</p>
-<div class="fragment">
-<pre><code>%round-corners {
-...border-radius rules...
-}
-
-.btn {
-  @extend %round-corners;
-}</code></pre>
-<pre><code>&lt;input class=&quot;btn&quot;&gt;</code></pre>
-</div>
-</section>
-
-</section>
-
-<section>
-
   <section>
     <h2>Use Placeholders to avoid code bloat</h2>
-    <pre><code>EXAMPLE</code></pre>
-  </section>
-
-  <section>
-    <h2>Populate your placeholders with Mixins</h2>
-    <pre><code>EXAMPLE</code></pre>
+      <p class="fragment">and</p>
+    <h2 class="fragment">Populate your placeholders with Mixins</h2>
+    <pre class="fragment"><code>%active-button {
+      @include sassy-buttons(shiny, #c0ff33);
+}</code></pre>
   </section>
 
 </section>
@@ -992,17 +1000,56 @@ $quadrary-color:    $deep-red;
 
 <section>
   <h2>Nested <b>@Media</b> directives</h2>
-  <pre><code>EXAMPLE</code></pre>
+  <pre><code>.article-section {
+
+  padding-left:$viewport-gutters;
+  padding-right:$viewport-gutters;
+
+  @media (min-width: 25em) {
+    padding-left:$viewport-gutters-med;
+    padding-right:$viewport-gutters-med;
+  }
+}</code></pre>
   <p class="fragment">Keep your media queries with the styles they're adjusting</p>
   <p class="fragment">Gzip eats the code repetition</p>
   <aside class="notes">
     <ul>
       <li>Keep your media queries with the styles they're adjusting</li>
-      <li>Gzip eats the code repetition</li>
+      <li>Gzip eats the code repetition — maintainability vs. slight size increase is worth it.</li>
     </ul>
   </aside>
 </section>
 
+</section>
+
+
+<section>
+
+  <section>
+  <h2>Use Sass to avoid binding visual Css rules to HTML</h2>
+  </section>
+
+  <section>
+  <p>The old OOCSS way</p>
+  <div class="fragment">
+  <pre><code>.round-corners {
+  ...border-radius rules...
+}</code></pre>
+  <pre><code>&lt;input class=&quot;btn round-corners&quot;&gt;</code></pre>
+  </div>
+
+  <p class="fragment">The <b>right</b> way</p>
+  <div class="fragment">
+  <pre><code>%round-corners {
+  ...border-radius rules...
+}
+
+.btn {
+  @extend %round-corners;
+}</code></pre>
+  <pre><code>&lt;input class=&quot;btn&quot;&gt;</code></pre>
+  </div>
+  </section>
 
 </section>
 
@@ -1051,6 +1098,14 @@ $quadrary-color:    $deep-red;
 					</aside>
 				</section>
 
+        <section>
+          <h2>Use other people's code</h2>
+          <p class="fragment">If it's a common problem, chances are someone else has already solved it</p>
+          <p class="fragment">The more people using a project, the better it will be</p>
+          <p class="fragment">http://<b>github</b>.com</p>
+
+        </section>
+
 				<section>
 					<h2>A few more...</h2>
           <p class="fragment">Don't edit the CSS</p>
@@ -1064,7 +1119,7 @@ $quadrary-color:    $deep-red;
               <li>Use a junk file</li>
               <li>Don't worry about how the compiled CSS looks</li>
               <li>gzip will take care of repetition</li>
-              <li>Work Locally</li>     
+              <li>Work Locally</li>
             </ul>
 					</aside>
 				</section>
@@ -1116,8 +1171,8 @@ $quadrary-color:    $deep-red;
               <ul>
                 <li>The ability to see style changes without a browser refresh</li>
                 <li>Keep a browser window open</li>
-                <li>There are both CLI and GUI options</li>
-                <li>LiveReload</li>                
+                <li>There are command line and gui options.</li>
+                <li>guard-livereload, Codekit</li>
               </ul>
             </aside>
           </section>
