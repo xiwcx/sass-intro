@@ -670,7 +670,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 				<section>
 					<img src="img/compass.png"><h1>&gt;</h1><img src="img/bourbon.png">
 					<aside class="notes">
-						Out of this need there have emerged two main frameworks. In our opinion Compass is a clear winner and that's what we'll be discussing today.
+						Sass + Compass are often mentioned in the same breath, but there is nothing that inherently ties the two together. There are two frameworks that have emerged. In our opinion Compass is a clear winner and that's what we'll be discussing today.
 					</aside>
 				</section>
 
@@ -682,6 +682,16 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 					<p class="fragment">Control through config.rb</p>
 					<p class="fragment">Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)
           <p class="fragment"><b><em>it's the defacto standard</em></b></p>
+          <aside class="notes">
+            <ul>
+              <li>Much larger library</li>
+              <li>Many more extensions</li>
+              <li>Broad base of support</li>
+              <li>Control through config.rb</li>
+              <li>Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)
+              <li>it's the defacto standard</li>
+            </ul>
+          </aside>
 				</section>
 
 	<section>
@@ -777,19 +787,26 @@ a {
 						<h2>Massively Extensible</h2>
 
 						<ul>
-							<li><a target="_blank" href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a>
+							<li><a target="_blank" href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a></li>
 							<li><a target="_blank" href="http://susy.oddbird.net/">Susy</a> for layout</li>
 							<li><a target="_blank" href="https://github.com/canarymasobbreakpoint">Breakpoint</a> for media queries</li>
+              <li><a href="http://jaredhardy.com/sassy-buttons/">Sassy Buttons</a> for fancy CSS3 buttons</li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Compass Extenstions: All Together Now</h2>
 						<pre><code>
+// Breakpoint Variables
+
 $med: 500px;
 $lrg: 800px;
 
+// Singularity Variables
+
 $grids: 2, 6 $med, 12 $lrg;
+
+// Our Rules
 
 .main {
   @include grid-span(2, 1);
@@ -978,7 +995,14 @@ $quadrary-color:    $deep-red;
   <pre><code>EXAMPLE</code></pre>
   <p class="fragment">Keep your media queries with the styles they're adjusting</p>
   <p class="fragment">Gzip eats the code repetition</p>
+  <aside class="notes">
+    <ul>
+      <li>Keep your media queries with the styles they're adjusting</li>
+      <li>Gzip eats the code repetition</li>
+    </ul>
+  </aside>
 </section>
+
 
 </section>
 
@@ -1005,7 +1029,7 @@ $quadrary-color:    $deep-red;
 					</section>
 
 					<section>
-						<h2>Nested @imports</h2>
+						<h2>@imports in @imports</h2>
 						File Structure
 						<pre><code>/scss
   /pages
@@ -1019,9 +1043,9 @@ $quadrary-color:    $deep-red;
   margin: 0 auto;
 }
 
-@import "archive";
-@import "single-post";
-@import "custom-template";</pre></code>
+@import "pages/archive";
+@import "pages/single-post";
+@import "pages/custom-template";</pre></code>
 					</section>
 					<aside class="notes">
 					</aside>
@@ -1030,9 +1054,18 @@ $quadrary-color:    $deep-red;
 				<section>
 					<h2>A few more...</h2>
           <p class="fragment">Don't edit the CSS</p>
+          <p class="fragment">Use a junk file</p>
 					<p class="fragment">Don't worry about how the compiled CSS looks</p>
+          <p class="fragment">gzip will take care of repetition</p>
 					<p class="fragment"><b><em>Work Locally</em></b></p>
 					<aside class="notes">
+            <ul>
+              <li>Don't edit the CSS</li>
+              <li>Use a junk file</li>
+              <li>Don't worry about how the compiled CSS looks</li>
+              <li>gzip will take care of repetition</li>
+              <li>Work Locally</li>     
+            </ul>
 					</aside>
 				</section>
 
@@ -1048,9 +1081,8 @@ $quadrary-color:    $deep-red;
 
 				<section>
           <h2>Why?</h2>
-            <p class="fragment">Save yourself a lot of time</p>
-            <p class="fragment">Avoid downtime on the live site</p>
-            <p class="fragment"><b><em>Seriously</em></b>, you'll save a lot of time</p>
+          <p>Save yourself a lot of time</p>
+
 					<aside class="notes">
 					</aside>
 				</section>
@@ -1080,6 +1112,14 @@ $quadrary-color:    $deep-red;
             <p class="fragment">Keep a browser window open</p>
             <p class="fragment">There are both CLI and GUI options</p>
             <p class="fragment">LiveReload</p>
+            <aside class="notes">
+              <ul>
+                <li>The ability to see style changes without a browser refresh</li>
+                <li>Keep a browser window open</li>
+                <li>There are both CLI and GUI options</li>
+                <li>LiveReload</li>                
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -1093,14 +1133,28 @@ html {
 }</code></pre>
             <p class="fragment">Inspecting Sass in the Browser <b>(Chrome Dev Tools, Firesass)</b></p>
             <p class="fragment">Save edits from the browser <b>(Chrome Only)</b></p>
+            <aside class="notes">
+              <ul>
+                <li>Sass can compile with line number comments</li>
+                <li>Code fragment</li>
+                <li>Inspecting Sass in the Browser (Chrome Dev Tools, Firesass)</li>
+                <li>Save edits from the browser (Chrome Only)</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
             <h2><b>Version Control</b> and <b>Deployment</b></h2>
             <p class="fragment">Version control: you should probably be using it</p>
             <p class="fragment">Version control: you should probably be using <b>git</b></p>
-            <p class="fragment">Theme folder</p>
-            <p class="fragment">Database</p>
+            <p class="fragment">Version control what you should be version controlling</p>
+            <aside class="notes">
+              <ul>
+                <li>Version control: you should probably be using it</li>
+                <li>Version control: you should probably be using git</li>
+                <li>Theme folder, MySQL db, and core files if you had edited them</li>
+              </ul>
+            </aside>
           </section>
 
         </section>
