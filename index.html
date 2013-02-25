@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Sass, Compass, and Working Locally</title>
+    <title>Sass, Compass, and Working Locally</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" target="_blank" href="css/reveal.min.css">
-		<link rel="stylesheet" target="_blank" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" target="_blank" href="css/reveal.min.css">
+    <link rel="stylesheet" target="_blank" href="css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" target="_blank" href="lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" target="_blank" href="lib/css/zenburn.css">
 
     <style type="text/css">
       .reveal b {
@@ -36,22 +36,22 @@
       }
     </style>
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" target="_blank" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" target="_blank" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
 <!-- ----------------------------------------------- -->
 
@@ -102,16 +102,17 @@
           <section>
           <h2>Why use sass?</h2>
 
-          <p class="fragment upper-lower">Reduce repitition <b>(no more copy-pasting!)</b></p>
+          <p class="fragment upper-lower">Reduce repetition <b>(no more copy-pasting!)</b></p>
           <p class="fragment upper-lower">Create manageable, well organized, reusable code <b>(one use, in one place)</b></p>
-          <p class="fragment upper-lower">Add simple logic to the declaritive language of CSS <b>(if this then WHAAAT?)</b></p>
+          <p class="fragment upper-lower">Add simple logic to the declarative language of CSS <b>(if this then WHAAAT?)</b></p>
           <p class="fragment upper-lower">Built in error checking <b>(no more hunting missing semicolons!)</b></p>
 
               <aside class="notes">
-Reduce repitition (no more copy-pasting!)
+Reduce repetition (no more copy-pasting!)
 Create manageable, well organized code (one use, in one place)
-Add simple logic to the declaritive language of CSS (if this then WHAAAT?)
+Add simple logic to the declarative language of CSS (if this then WHAAAT?)
 Built in error checking (no more hunting missing semicolons!)
+All this is going to allow you to...
               </aside>
 
           </section>
@@ -262,7 +263,7 @@ $sprite-bg: $imagebox-blue url(../img/sprites.png);</code></pre>
 }</code></pre>
 
 <aside class="notes">
-  Everything has been replaced! Use these any time a value is re-usable, or a value means something. Is it your primary site color, your brand color, your column padding?
+  Everything has been replaced! Use these any time a value is re-usable, or a value means something. Is it your primary site color, your brand color, your column padding? Name it that, use a variable.
 </aside>
           </section>
 
@@ -684,7 +685,7 @@ Often used to alter a value you're already reusing, or for calculation
 
 <!-- ==============
 ===================
-			Part 2
+      Part 2
 ===================
 =============== -->
 
@@ -701,24 +702,24 @@ Often used to alter a value you're already reusing, or for calculation
 ===================
 =============== -->
 
-				<section data-state="alt-bg">
-					<h1>Enter Compass</h1>
-				</section>
+        <section data-state="alt-bg">
+          <h1>Enter Compass</h1>
+        </section>
 
-				<section>
-					<img src="img/compass.png"><h1>&gt;</h1><img src="img/bourbon.png">
-					<aside class="notes">
-						Sass + Compass are often mentioned in the same breath, but there is nothing that inherently ties the two together. There are two frameworks that have emerged. In our opinion Compass is a clear winner and that's what we'll be discussing today.
-					</aside>
-				</section>
+        <section>
+          <img src="img/compass.png"><h1>&gt;</h1><img src="img/bourbon.png">
+          <aside class="notes">
+            Sass + Compass are often mentioned in the same breath, but there is nothing that inherently ties the two together. There are two frameworks that have emerged. In our opinion Compass is a clear winner and that's what we'll be discussing today.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Why is it the winner?</h2>
-					<p class="fragment">Much larger library</p>
-					<p class="fragment">Many more extensions</p>
-				  <p class="fragment">Broad base of support</p>
-					<p class="fragment">Control through config.rb</p>
-					<p class="fragment">Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)
+        <section>
+          <h2>Why is it the winner?</h2>
+          <p class="fragment">Much larger library</p>
+          <p class="fragment">Many more extensions</p>
+          <p class="fragment">Broad base of support</p>
+          <p class="fragment">Control through config.rb</p>
+          <p class="fragment">Comes bundled with a ton of other tools (sprite generation, image compression, url helpers...)
           <p class="fragment"><b><em>it's the defacto standard</em></b></p>
           <aside class="notes">
             <ul>
@@ -730,12 +731,12 @@ Often used to alter a value you're already reusing, or for calculation
               <li>it's the defacto standard</li>
             </ul>
           </aside>
-				</section>
+        </section>
 
-	<section>
-					<section>
-						<h2>Mixins</h2>
-					</section>
+  <section>
+          <section>
+            <h2>Mixins</h2>
+          </section>
 
         <section>
           <h2>CSS3 Mixins</h2>
@@ -779,9 +780,9 @@ a:focus { color: #FF704D; }
             </pre></code>
   </section>
 
-	<section>
-						<h3>SCSS</h3>
-						<pre><code>
+  <section>
+            <h3>SCSS</h3>
+            <pre><code>
 a {
   &:link { color: #B2FF99 }
   &:hover { color: #FF704D; }
@@ -789,52 +790,52 @@ a {
   &:visited { color: #FFFF85; }
   &:focus { color: #FF704D; }
 }
-						</pre></code>
-	</section>
+            </pre></code>
+  </section>
 
-	<section>
-						<h3>SCSS w/ Compass</h3>
-						<pre><code>
+  <section>
+            <h3>SCSS w/ Compass</h3>
+            <pre><code>
 a {
   @include link-colors( #B2FF99, #FF704D, #FF704D, #FFFF85, #FF704D );
 }
-						</pre></code>
+            </pre></code>
 
-						<a target="_blank" href="http://compass-style.org/reference/compass/typography/links/link_colors/">http://compass-style.org/reference/compass/typography/links/link_colors/</a>
-					</section>
+            <a target="_blank" href="http://compass-style.org/reference/compass/typography/links/link_colors/">http://compass-style.org/reference/compass/typography/links/link_colors/</a>
+          </section>
   </section>
 
-				<section>
-					<section>
-						<h2>Wait, there's more!</h2>
-					</section>
+        <section>
+          <section>
+            <h2>Wait, there's more!</h2>
+          </section>
 
-					<section>
-						<h2>config.rb</h2>
+          <section>
+            <h2>config.rb</h2>
 
-						<img src="img/configrb.png">
+            <img src="img/configrb.png">
 
-						<aside class="notes">
-							-  Preferences don't have to be called everytime in the command line, they can be set in the config.rb
-    					-  Extensions can be required together, and the config file shared for people working on the same project
-    					-  compass watch
-						</aside>
-					</section>
+            <aside class="notes">
+              -  Preferences don't have to be called every time in the command line, they can be set in the config.rb
+              -  Extensions can be required together, and the config file shared for people working on the same project
+              -  compass watch
+            </aside>
+          </section>
 
-					<section>
-						<h2>Massively Extensible</h2>
+          <section>
+            <h2>Massively Extensible</h2>
 
-						<ul>
-							<li><a target="_blank" href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a></li>
-							<li><a target="_blank" href="http://susy.oddbird.net/">Susy</a> for layout</li>
-							<li><a target="_blank" href="https://github.com/canarymasobbreakpoint">Breakpoint</a> for media queries</li>
+            <ul>
+              <li><a target="_blank" href="https://github.com/scottkellum/modular-scale">Modular Scale</a> for typography</a></li>
+              <li><a target="_blank" href="http://susy.oddbird.net/">Susy</a> for layout</li>
+              <li><a target="_blank" href="https://github.com/canarymasobbreakpoint">Breakpoint</a> for media queries</li>
               <li><a href="http://jaredhardy.com/sassy-buttons/">Sassy Buttons</a> for fancy CSS3 buttons</li>
-						</ul>
-					</section>
+            </ul>
+          </section>
 
-					<section>
-						<h2>Compass Extenstions: All Together Now</h2>
-						<pre><code>
+          <section>
+            <h2>Compass Extenstions: All Together Now</h2>
+            <pre><code>
 // Breakpoint Variables
 
 $med: 500px;
@@ -857,36 +858,36 @@ $grids: 2, 6 $med, 12 $lrg;
       @include grid-span(6, 1);
   }
 }
-						</pre></code>
-						<p>This example uses <a target="_blank" href="http://singularity.gs">Singularity</a> and <a target="_blank" href="https://github.com/canarymason/breakpoint">Breakpoint</a> gems.
+            </pre></code>
+            <p>This example uses <a target="_blank" href="http://singularity.gs">Singularity</a> and <a target="_blank" href="https://github.com/canarymason/breakpoint">Breakpoint</a> gems.
 
-					</section>
+          </section>
 
-				</section>
+        </section>
 
-				<section>
-					<section>
-						<h2>Use Wisely!</h2>
-					</section>
-					<section>
-						<p>Know your tools</p>
+        <section>
+          <section>
+            <h2>Use Wisely!</h2>
+          </section>
+          <section>
+            <p>Know your tools</p>
             <p>The clearfix Compass includes is outdated</p>
-						<pre><code>
+            <pre><code>
 div {
   @include clearfix;
 }
-						</pre></code>
-						<p>Output:</p>
-						<pre><code>
+            </pre></code>
+            <p>Output:</p>
+            <pre><code>
 div {
   overflow: hidden;
   *zoom: 1;
 }
-						</pre></code>
-					</section>
-					<section>
-						<p>You'd be better off with:</p>
-						<pre><code>
+            </pre></code>
+          </section>
+          <section>
+            <p>You'd be better off with:</p>
+            <pre><code>
 @mixin cf{
   &:before,
   &:after {
@@ -901,35 +902,35 @@ div {
 %cf {
   @include cf;
 }
-						</pre></code>
+            </pre></code>
 
-						<small>*<a target="_blank" href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicholas Gallagher Micro Clearfix</a></small>
-					</section>
-				</section>
-
-<!-- ==============
-===================
-			BREAK
-===================
-=============== -->
-
-				<section data-state="alt-bg">
-					<h1>LET'S TAKE A FUCKING BREAK!</h1>
-					<small>unless you don't want to</small>
-				</section>
+            <small>*<a target="_blank" href="http://nicolasgallagher.com/micro-clearfix-hack/">Nicholas Gallagher Micro Clearfix</a></small>
+          </section>
+        </section>
 
 <!-- ==============
 ===================
-	BEST PRACTICES
+      BREAK
 ===================
 =============== -->
 
-				<section data-state="alt-bg">
-					<h1>Best Practices</h1>
-				</section>
+        <section data-state="alt-bg">
+          <h1>LET'S TAKE A FUCKING BREAK!</h1>
+          <small>unless you don't want to</small>
+        </section>
 
-				<section>
-					<h2>Two Layer Abstraction</h2>
+<!-- ==============
+===================
+  BEST PRACTICES
+===================
+=============== -->
+
+        <section data-state="alt-bg">
+          <h1>Best Practices</h1>
+        </section>
+
+        <section>
+          <h2>Two Layer Abstraction</h2>
 <pre class="codepen" data-height="300" data-type="css" data-href="smykp" data-user="xiwcx" data-safe="true"><code>$red:               hsl(360, 100%, 50%);
 $blue:              hsl(240, 100%, 50%);
 $yellow:            hsl(60, 100%, 50%);
@@ -979,9 +980,9 @@ $quadrary-color:    $deep-red;
   margin: 5px;
 }</code><a target="_blank" href="http://codepen.io/xiwcx/pen/smykp">Check out this Pen!</a></pre>
 <script async src="http://codepen.io/assets/embed/ei.js"></script>
-					<aside class="notes">
-					</aside>
-				</section>
+          <aside class="notes">
+          </aside>
+        </section>
 
 <section>
 
@@ -1054,12 +1055,12 @@ $quadrary-color:    $deep-red;
 </section>
 
 
-				<section>
-					<section>
-						<h2>Partials</h2>
+        <section>
+          <section>
+            <h2>Partials</h2>
 
-						File Structure
-						<pre><code>/scss
+            File Structure
+            <pre><code>/scss
   - style.scss
   - _base.scss
   - _layout.scss
@@ -1067,25 +1068,25 @@ $quadrary-color:    $deep-red;
   - _state.scss
   - _theme.scss</pre></code>
 
-						style.scss
-						<pre><code>@import "base";
+            style.scss
+            <pre><code>@import "base";
 @import "layout";
 @import "module";
 @import "state";
 @import "theme";</pre></code>
-					</section>
+          </section>
 
-					<section>
-						<h2>@imports in @imports</h2>
-						File Structure
-						<pre><code>/scss
+          <section>
+            <h2>@imports in @imports</h2>
+            File Structure
+            <pre><code>/scss
   /pages
     - _archive.scss
     - _single-post.scss
     - _custom-template.scss</pre></code>
 
-						_layout.scss
-						<pre><code>.container-main {
+            _layout.scss
+            <pre><code>.container-main {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1093,10 +1094,10 @@ $quadrary-color:    $deep-red;
 @import "pages/archive";
 @import "pages/single-post";
 @import "pages/custom-template";</pre></code>
-					</section>
-					<aside class="notes">
-					</aside>
-				</section>
+          </section>
+          <aside class="notes">
+          </aside>
+        </section>
 
         <section>
           <h2>Use other people's code</h2>
@@ -1106,14 +1107,14 @@ $quadrary-color:    $deep-red;
 
         </section>
 
-				<section>
-					<h2>A few more...</h2>
+        <section>
+          <h2>A few more...</h2>
           <p class="fragment">Don't edit the CSS</p>
           <p class="fragment">Use a junk file</p>
-					<p class="fragment">Don't worry about how the compiled CSS looks</p>
+          <p class="fragment">Don't worry about how the compiled CSS looks</p>
           <p class="fragment">gzip will take care of repetition</p>
-					<p class="fragment"><b><em>Work Locally</em></b></p>
-					<aside class="notes">
+          <p class="fragment"><b><em>Work Locally</em></b></p>
+          <aside class="notes">
             <ul>
               <li>Don't edit the CSS</li>
               <li>Use a junk file</li>
@@ -1121,26 +1122,26 @@ $quadrary-color:    $deep-red;
               <li>gzip will take care of repetition</li>
               <li>Work Locally</li>
             </ul>
-					</aside>
-				</section>
+          </aside>
+        </section>
 
 <!-- ==============
 ===================
-	LOCAL WORKFLOW
+  LOCAL WORKFLOW
 ===================
 =============== -->
 
-				<section data-state="alt-bg">
-					<h1>Practical Local Workflow</h1>
-				</section>
+        <section data-state="alt-bg">
+          <h1>Practical Local Workflow</h1>
+        </section>
 
-				<section>
+        <section>
           <h2>Why?</h2>
           <p>Save yourself a lot of time</p>
 
-					<aside class="notes">
-					</aside>
-				</section>
+          <aside class="notes">
+          </aside>
+        </section>
 
         <section>
           <section>
@@ -1171,8 +1172,7 @@ $quadrary-color:    $deep-red;
               <ul>
                 <li>The ability to see style changes without a browser refresh</li>
                 <li>Keep a browser window open</li>
-                <li>There are command line and gui options.</li>
-                <li>guard-livereload, Codekit</li>
+                <li>There are command line and gui options: guard-livereload, Codekit</li>
               </ul>
             </aside>
           </section>
@@ -1205,8 +1205,7 @@ html {
             <p class="fragment">Version control what you should be version controlling</p>
             <aside class="notes">
               <ul>
-                <li>Version control: you should probably be using it</li>
-                <li>Version control: you should probably be using git</li>
+                <li>Version control: you should probably be using (g)it</li>
                 <li>Theme folder, MySQL db, and core files if you had edited them</li>
               </ul>
             </aside>
@@ -1218,39 +1217,39 @@ html {
           <h1>Questions?</h1>
         </section>
 
-			</div>
+      </div>
 
-		</div>
+    </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-		<script>
+    <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-		</script>
+    </script>
 
-	</body>
+  </body>
 </html>
